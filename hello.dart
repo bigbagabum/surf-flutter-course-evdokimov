@@ -114,14 +114,29 @@ So if she sells sea shells on the sea shore
 
 I am sure that the shells are sea shore shells”
 */
+//
+  var mySet = {'Москва', 'Вашингтон', 'Париж'};
+  mySet.add('Вашингтон');
+  print(
+      mySet.length); // длинна не увеличилась, потому что значение не уникально
+//
 
   String mystring = '''She sells sea shells on the sea shore 
 The shells that she sells are sea shells I am sure.
 So if she sells sea shells on the sea shore
 I am sure that the shells are sea shore shells''';
 
-  List<String> mylist =
-      mystring.split('sh'); // Разбить строку в массив по разделителю sh
+  mystring = mystring.toLowerCase(); //Убираем верхний регистр
 
-  print(mylist.length);
+  mystring = mystring.replaceAll('\n', ' '); // заменяем все переносы на пробелы
+  List<String> mylist =
+      mystring.split(' '); // разбиваем строку в список слов с разделителем ' '
+
+  /* mylist = mylist
+      .where((element) => element.contains('sh'))
+      .toList(); //собираем список из списка со словами с 'sh' */
+  var mySet1 = mylist.toSet();
+
+  print(mySet1);
+  print(mySet1.length);
 }
