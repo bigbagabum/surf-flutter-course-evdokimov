@@ -7,7 +7,8 @@ void main() {
 
   //2.4.3 Создать строковую переменную с именем text  при помощи var, попытаться присвоить переменной a. Каков результат?
   var text = 'hello';
-  text = a; //не соответствует тип, можно это победить преобразовав A в string
+  text = a;
+  //не соответствует тип, можно это победить преобразовав A в string
 
   //2.4.4 Создать переменную  с именем dyn при помощи dynamic, проинициализировать его целочисленным значением, далее попытаться присвоить переменной строковое значение переменной text. Каков результат? Почему?
   dynamic dyn = 10;
@@ -114,14 +115,29 @@ So if she sells sea shells on the sea shore
 
 I am sure that the shells are sea shore shells”
 */
+//
+  var mySet = {'Москва', 'Вашингтон', 'Париж'};
+  mySet.add('Вашингтон');
+  print(
+      mySet.length); // длинна не увеличилась, потому что значение не уникально
+//
 
   String mystring = '''She sells sea shells on the sea shore 
 The shells that she sells are sea shells I am sure.
 So if she sells sea shells on the sea shore
 I am sure that the shells are sea shore shells''';
 
-  List<String> mylist =
-      mystring.split('sh'); // Разбить строку в массив по разделителю sh
+  mystring = mystring.toLowerCase(); //Убираем верхний регистр
 
-  print(mylist.length);
+  mystring = mystring.replaceAll('\n', ' '); // заменяем все переносы на пробелы
+  List<String> mylist =
+      mystring.split(' '); // разбиваем строку в список слов с разделителем ' '
+
+  /* mylist = mylist
+      .where((element) => element.contains('sh'))
+      .toList(); //собираем список из списка со словами с 'sh' */
+  var mySet1 = mylist.toSet();
+
+  print(mySet1);
+  print(mySet1.length);
 }
