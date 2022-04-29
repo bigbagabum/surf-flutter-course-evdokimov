@@ -1,39 +1,59 @@
-
-
 /*-- Используя switch, напишите программу в методе main(), 
 которая выводит название месяца по номеру от 1 до 12.
 --*/
-void void main(List<String> args) {
-     
-       for (int n = 1; n <= 12; n++){
-  switch (n) {
-     case 1: print ('Январь');     break;
-     case 2: print ('Январь');     break;
-     case 3: print ('Январь');     break;
-     case 4: print ('Январь');     break;
-     case 5: print ('Январь');     break;
-     case 6: print ('Январь');     break;
-     case 7: print ('Январь');     break;
-     case 8: print ('Январь');     break;
-     case 9: print ('Январь');     break;
-     case 10: print ('Январь');    break;
-     case 11: print ('Январь');    break;
-     case 12: print ('Январь');    break;
-    default: print ('неверное значение');
-}
+void main(List<String> args) {
+  for (int n = 1; n <= 12; n++) {
+    switch (n) {
+      case 1:
+        print('Январь');
+        break;
+      case 2:
+        print('Январь');
+        break;
+      case 3:
+        print('Январь');
+        break;
+      case 4:
+        print('Январь');
+        break;
+      case 5:
+        print('Январь');
+        break;
+      case 6:
+        print('Январь');
+        break;
+      case 7:
+        print('Январь');
+        break;
+      case 8:
+        print('Январь');
+        break;
+      case 9:
+        print('Январь');
+        break;
+      case 10:
+        print('Январь');
+        break;
+      case 11:
+        print('Январь');
+        break;
+      case 12:
+        print('Январь');
+        break;
+      default:
+        print('неверное значение');
+    }
   }
 
- // Используя циклы, напишите программу, которая выводит на консоль все четные числа от 0 до 100.
+  // Используя циклы, напишите программу, которая выводит на консоль все четные числа от 0 до 100.
 
- for(int i = 1; i <= 100; i++){
-   if (i.isEven) {
-     print(i);
-   }
- }
+  for (int i = 1; i <= 100; i++) {
+    if (i.isEven) {
+      print(i);
+    }
+  }
 
- /*-- Написать программу, которая слушает ввод в консоли, складывает вводимые пользователем числа. 
+  /*-- Написать программу, которая слушает ввод в консоли, складывает вводимые пользователем числа. 
  Если пользователь ввел stop, завершить приложение. Если пользователь вводит некорректные данные 
  - прервать текущую итерацию, начать заново. --*/
-
- 
 }
