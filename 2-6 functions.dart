@@ -1,13 +1,18 @@
-/* 1) 
+/* 1)
 Создайте текстовую переменную a = ‘hello world’; 
 Напишите функцию, без возвращаемого значения. 
 Функция меняет порядок слов на обратный. Например было ‘hello world’, 
 стало ‘world hello’ */
 
+import 'dart:io';
 import 'dart:math';
 
 void main() {
-  String a = 'hello world';
+  String a = 'Hello world';
+
+  String? str;
+  str = stdin.readLineSync();
+
   void backsort(String str) {
     List mylist = str.split(' ');
     str = '';
@@ -44,4 +49,7 @@ void main() {
   }
 
   print(average(listOfInt));
+
+  /* Модернизируйте предыдущие функции так, чтобы на вход они принимали необходимые данные для работы. 
+ Параметр должен быть опциональным.*/
 }

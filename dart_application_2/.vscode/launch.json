@@ -4,16 +4,12 @@
     // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
-            "name": "Dart",
+            "name": "dart_application_2",
+            "request": "launch",
             "type": "dart",
-            "request": "launch",
-            "program": "bin/main.dart"
-        },
-        {
-            "name": "Dart & Flutter",
-            "request": "launch",
-            "type": "dart"
+            "console": "terminal"
         }
     ]
 }
