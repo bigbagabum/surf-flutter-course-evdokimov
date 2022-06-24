@@ -39,12 +39,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - asset: res/fonts/Roboto-Light.ttf
+    - asset: res/fonts/
 
   fonts: 
     - family: Roboto
       fonts: 
-        - asset: res/fonts/Roboto-Light.ttf
+        - asset: res/fonts/
 
 
 
