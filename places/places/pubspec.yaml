@@ -44,7 +44,7 @@ flutter:
   fonts: 
     - family: Roboto
       fonts: 
-        - asset: res/fonts/
+        - asset: res/fonts/Roboto-Light.ttf
 
 
 
