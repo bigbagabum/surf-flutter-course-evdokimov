@@ -4,11 +4,40 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyFirstWidget extends StatelessWidget {
-  const MyFirstWidget({Key? key}) : super(key: key);
+class MySecondWidget extends StatefulWidget {
+  const MySecondWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MySecondWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MySecondWidget> {
+  int i = 0;
 
   @override
   Widget build(BuildContext context) {
+    print(i);
+    i += 1;
+
+    return Container(
+      child: Center(
+        child: Text('Hello!'),
+      ),
+    );
+  }
+}
+
+class MyFirstWidget extends StatelessWidget {
+  int i = 0;
+  MyFirstWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: avoid_print
+
+    print(i);
+    i += 1;
+
     // ignore: avoid_unnecessary_containers
     return Container(
       child: const Center(
@@ -38,7 +67,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MySecondWidget(),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
