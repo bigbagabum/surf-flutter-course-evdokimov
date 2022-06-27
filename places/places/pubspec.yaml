@@ -31,9 +31,13 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  asset: 
+    ./res/
+
   fonts:
     - family: Roboto
       fonts:
-        - asset: fonts/Schyler-Regular.ttf
+        - asset: res/fonts/Roboto/Roboto-Light.ttf
 
   
