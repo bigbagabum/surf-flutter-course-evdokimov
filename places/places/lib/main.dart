@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
 class MySecondWidget extends StatefulWidget {
@@ -41,7 +41,7 @@ class MyFirstWidget extends StatelessWidget {
     // ignore: avoid_unnecessary_containers
     return Container(
       child: const Center(
-        child: Text('Hello!'),
+        child: Text('Hello First App!'),
       ),
     );
   }
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MySecondWidget(),
+      home: MyFirstWidget(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -154,6 +154,18 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Мобильное приложение",
+      home: MyFirstWidget(),
     );
   }
 }
