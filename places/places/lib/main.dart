@@ -1,3 +1,7 @@
+//import 'dart:js';
+
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +20,7 @@ class _MyWidgetState extends State<MySecondWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_print
     print(i);
     i += 1;
 
@@ -41,7 +46,7 @@ class MyFirstWidget extends StatelessWidget {
     // ignore: avoid_unnecessary_containers
     return Container(
       child: const Center(
-        child: Text('Hello First App!'),
+        child: Text('Hello First App'),
       ),
     );
   }
@@ -158,13 +163,40 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class App extends StatelessWidget {
+// class App extends StatelessWidget {
+//   const App({Key? key}) : super(key: key);
+
+//   Type method() => context.runtimeType;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'New mobile App',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: MyFirstWidget(),
+//     );
+//   }
+// }
+
+class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
   @override
+  State<App> createState() => _AppState();
+
+  Type method() => context.runtimeType;
+}
+
+class _AppState extends State<App> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Мобильное приложение",
+      title: 'New mobile App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: MyFirstWidget(),
     );
   }
