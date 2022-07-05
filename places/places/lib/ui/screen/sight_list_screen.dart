@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class SightListScreen extends StatefulWidget {
@@ -10,6 +12,13 @@ class SightListScreen extends StatefulWidget {
 class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Hello!")));
+    return Scaffold(
+      body: Center(
+          child: TextField(
+              decoration: InputDecoration(
+        hintText: 'нажмите чтобы появилась клавиатура',
+      ))),
+      resizeToAvoidBottomInset: false,
+    );
   }
 }
