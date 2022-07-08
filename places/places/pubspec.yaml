@@ -62,8 +62,9 @@ flutter:
 
   fonts:
     - family: Roboto
-      fonts:
+      fonts: Roboto
         - asset: lib/fonts/Roboto/Roboto-Light.ttf
+        - asset: lib/fonts/Roboto/Roboto-Black.ttf    
 
   # To add assets to your application, add an assets section, like this:
   # assets:
