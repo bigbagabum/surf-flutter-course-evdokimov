@@ -14,20 +14,19 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //elevation: 0,
-
+        elevation: 0,
+        toolbarHeight: 72.0,
         backgroundColor: Colors.white10,
-        title: Text("Список\nинтересных местов",
+        title: Text("Список\nинтересных мест",
             textAlign: TextAlign.left,
-            style: TextStyle(
-                fontSize: 32, color: Color.fromARGB(255, 214, 38, 38))),
+            style: TextStyle(fontSize: 32, color: Colors.black)),
       ),
-      body: Center(
-          child: TextField(
-              decoration: InputDecoration(
-        hintText: 'нажмите чтобы появилась клавиатура',
-      ))),
-      resizeToAvoidBottomInset: false,
+      // body: Center(
+      //     child: TextField(
+      //         decoration: InputDecoration(
+      //   hintText: 'нажмите чтобы появилась клавиатура',
+      // ))),
+      // resizeToAvoidBottomInset: false,
     );
   }
 }

@@ -60,11 +60,11 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  fonts:
-    - family: Roboto
-      fonts: Roboto
-        - asset: lib/fonts/Roboto/Roboto-Light.ttf
-        - asset: lib/fonts/Roboto/Roboto-Black.ttf    
+  #fonts:
+  #  - family: Roboto
+  #    fonts: 
+  #      - asset: /fonts/Roboto/Roboto-Light.ttf
+  #      - asset: /fonts/Roboto/Roboto-Black.ttf    
 
   # To add assets to your application, add an assets section, like this:
   # assets:
