@@ -1,0 +1,4 @@
+#Tue Jun 21 16:31:00 MSK 2022
+base.0=E\:\\Flutter\\github\\flutter-course\\surf-flutter-course-evdokimov\\app_new\\flutter_application\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
