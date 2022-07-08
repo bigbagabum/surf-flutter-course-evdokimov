@@ -19,7 +19,12 @@ class _SightListScreenState extends State<SightListScreen> {
         backgroundColor: Colors.white10,
         title: Text("Список\nинтересных мест",
             textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 32, color: Colors.black)),
+            style: TextStyle(
+              fontSize: 32,
+              color: Colors.black,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.bold,
+            )),
       ),
       // body: Center(
       //     child: TextField(
