@@ -2,20 +2,17 @@
 
 import 'package:flutter/material.dart';
 
-class SightListScreenRich extends StatefulWidget {
-  const SightListScreenRich({Key? key}) : super(key: key);
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({Key? key}) : super(key: key);
 
-  @override
-  State<SightListScreenRich> createState() => _SightListScreenRichState();
-}
-
-class _SightListScreenRichState extends State<SightListScreenRich> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            padding: EdgeInsets.fromLTRB(16, 64, 0, 0),
-            child: RichText(
+        appBar: AppBar(
+            elevation: 0,
+            toolbarHeight: 72.0,
+            backgroundColor: Colors.white10,
+            title: RichText(
               text: TextSpan(
                 style: TextStyle(
                   fontSize: 32,
