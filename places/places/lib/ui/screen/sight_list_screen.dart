@@ -21,15 +21,13 @@ class _SightListScreenRichState extends State<SightListScreenRich> {
                   fontSize: 32,
                   color: Colors.black,
                   fontFamily: 'Roboto',
+                  fontWeight: FontWeight.bold,
                 ),
                 children: const <TextSpan>[
-                  TextSpan(
-                      text: "Список\n",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Roboto',
-                      )),
-                  TextSpan(text: "интересных мест"),
+                  TextSpan(text: "C", style: TextStyle(color: Colors.green)),
+                  TextSpan(text: "писок\n"),
+                  TextSpan(text: "и", style: TextStyle(color: Colors.yellow)),
+                  TextSpan(text: "нтересных мест"),
                 ],
               ),
             )));
