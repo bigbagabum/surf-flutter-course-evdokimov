@@ -2,6 +2,40 @@
 
 import 'package:flutter/material.dart';
 
+class SightListScreenRich extends StatefulWidget {
+  const SightListScreenRich({Key? key}) : super(key: key);
+
+  @override
+  State<SightListScreenRich> createState() => _SightListScreenRichState();
+}
+
+class _SightListScreenRichState extends State<SightListScreenRich> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+            padding: EdgeInsets.fromLTRB(16, 64, 0, 0),
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.black,
+                  fontFamily: 'Roboto',
+                ),
+                children: const <TextSpan>[
+                  TextSpan(
+                      text: "Список\n",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'Roboto',
+                      )),
+                  TextSpan(text: "интересных мест"),
+                ],
+              ),
+            )));
+  }
+}
+
 class SightListScreen extends StatefulWidget {
   const SightListScreen({Key? key}) : super(key: key);
 
@@ -26,12 +60,6 @@ class _SightListScreenState extends State<SightListScreen> {
               fontWeight: FontWeight.bold,
             )),
       ),
-      // body: Center(
-      //     child: TextField(
-      //         decoration: InputDecoration(
-      //   hintText: 'нажмите чтобы появилась клавиатура',
-      // ))),
-      // resizeToAvoidBottomInset: false,
     );
   }
 }
