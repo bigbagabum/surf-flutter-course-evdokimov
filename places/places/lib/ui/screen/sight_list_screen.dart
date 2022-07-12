@@ -2,6 +2,35 @@
 
 import 'package:flutter/material.dart';
 
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            elevation: 0,
+            toolbarHeight: 72.0,
+            backgroundColor: Colors.white10,
+            title: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.black,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.bold,
+                ),
+                children: const <TextSpan>[
+                  TextSpan(text: "C", style: TextStyle(color: Colors.green)),
+                  TextSpan(text: "писок\n"),
+                  TextSpan(text: "и", style: TextStyle(color: Colors.yellow)),
+                  TextSpan(text: "нтересных мест"),
+                ],
+              ),
+            )));
+  }
+}
+
 class SightListScreen extends StatefulWidget {
   const SightListScreen({Key? key}) : super(key: key);
 
@@ -13,12 +42,19 @@ class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: TextField(
-              decoration: InputDecoration(
-        hintText: 'нажмите чтобы появилась клавиатура',
-      ))),
-      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 72.0,
+        backgroundColor: Colors.white10,
+        title: Text("Список\nинтересных мест",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontSize: 32,
+              color: Colors.black,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.bold,
+            )),
+      ),
     );
   }
 }
