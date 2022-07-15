@@ -6,14 +6,8 @@ class SightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Center(
-      child: Column(
-        children: <Widget>[
-          const Text('text'),
-          const Text('data'),
-        ],
-      ),
-    ));
+    return Scaffold(
+      body: Center(child: Container()),
+    );
   }
 }
