@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
 //import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_card.dart';
@@ -58,8 +59,11 @@ class _SightListScreenState extends State<SightListScreen> {
                 fontWeight: FontWeight.bold,
               )),
         ),
-        body: Center(
-          child: SightCard(),
-        ));
+        body: SingleChildScrollView(
+            child: Column(children: [
+          SightCard(sight: jazzHotel),
+          SightCard(sight: metropolHotel),
+          SightCard(sight: kristalHotel),
+        ])));
   }
 }
