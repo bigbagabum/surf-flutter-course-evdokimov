@@ -103,10 +103,15 @@ class SightDetails extends StatelessWidget {
                                 alignment: Alignment.center,
                                 child: Row(children: [
                                   Container(
-                                      color: Colors.amber,
-                                      width: 20,
-                                      height: 18,
-                                      margin: const EdgeInsets.only(right: 10)),
+                                    child: const Icon(Icons.calendar_month,
+                                        size: 30,
+                                        color: Color.fromRGBO(
+                                            124, 126, 146, 0.56)),
+                                    // color: Colors.amber,
+                                    // width: 20,
+                                    // height: 18,
+                                    // margin: const EdgeInsets.only(right: 10)
+                                  ),
                                   const Text(
                                     'Запланировать',
                                     style: TextStyle(
@@ -121,10 +126,13 @@ class SightDetails extends StatelessWidget {
                                 alignment: Alignment.center,
                                 child: Row(children: [
                                   Container(
-                                    color: Colors.amber,
-                                    width: 20,
-                                    height: 18,
-                                    margin: const EdgeInsets.only(right: 10),
+                                    child: const Icon(Icons.favorite_border,
+                                        size: 30,
+                                        color: Color.fromARGB(255, 58, 63, 91)),
+                                    // color: Colors.amber,
+                                    // width: 20,
+                                    // height: 18,
+                                    // margin: const EdgeInsets.only(right: 10),
                                   ),
                                   const Text('В избранное',
                                       style: TextStyle(
