@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: SightDetails(sight: metropolHotel));
+        //  home: const SightListScreen());
+        home: SightDetails(sight: mocks[2]));
   }
 }
 
