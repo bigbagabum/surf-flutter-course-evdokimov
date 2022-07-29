@@ -24,6 +24,10 @@ class SightDetails extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.white)),
               ),
+              const SizedBox(
+                height: 5,
+                width: double.infinity,
+              ),
               Container(
                   //height: 400,
                   width: double.infinity,
