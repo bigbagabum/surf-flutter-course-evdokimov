@@ -12,8 +12,8 @@ class SightCard extends StatelessWidget {
       decoration: const BoxDecoration(
           color: Colors.green,
           borderRadius: BorderRadius.all(Radius.circular(15))),
-      height: 188,
-      width: double.infinity,
+      //height: 188,
+      //width: double.infinity,
       child: Column(
         children: [
           Container(
