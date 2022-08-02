@@ -8,7 +8,7 @@ import 'package:places/ui/res/app_theme.dart';
 // класс AppBar наследник от PrefferedSizeWidget
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  static const double height = 72;
+  static const double height = 92;
 
   const MyAppBar({
     Key? key,

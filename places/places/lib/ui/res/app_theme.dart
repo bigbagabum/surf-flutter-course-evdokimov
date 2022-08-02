@@ -17,11 +17,11 @@ class AppTypography {
   );
 
   static const textText32Bold = TextStyle(
-    fontSize: 32.0,
-    color: Colors.black,
-    fontFamily: "Roboto",
-    fontWeight: FontWeight.bold,
-  );
+      fontSize: 32.0,
+      color: Colors.black,
+      fontFamily: "Roboto",
+      fontWeight: FontWeight.bold,
+      height: 1);
 }
 
 class AppColors {
