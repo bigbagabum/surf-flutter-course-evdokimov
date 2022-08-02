@@ -27,3 +27,7 @@ class AppTypography {
 class AppColors {
   static const myColor = Colors.red;
 }
+
+class AppSize {
+  static const double appBarHeight = 72;
+}

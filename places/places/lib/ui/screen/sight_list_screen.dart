@@ -8,29 +8,26 @@ import 'package:places/ui/res/app_theme.dart';
 // класс AppBar наследник от PrefferedSizeWidget
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  static const double height = 92;
-
   const MyAppBar({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-        preferredSize: preferredSize,
-        child: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.white10,
-            title: Text(
-              AppStrings.appTitle,
-              textAlign: TextAlign.left,
-              style: AppTypography.textText32Bold,
-            )));
+    return AppBar(
+        toolbarHeight: 72,
+        elevation: 0,
+        backgroundColor: Colors.white10,
+        title: Text(
+          AppStrings.appTitle,
+          textAlign: TextAlign.left,
+          style: AppTypography.textText32Bold,
+        ));
   }
 
   @override
   // // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(height);
+  Size get preferredSize => Size.fromHeight(AppSize.appBarHeight);
 }
 
 class SightListScreen extends StatefulWidget {
