@@ -30,4 +30,5 @@ class AppColors {
 
 class AppSize {
   static const double appBarHeight = 72;
+  static const double toolBarSize = 72;
 }
