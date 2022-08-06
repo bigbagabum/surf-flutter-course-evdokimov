@@ -55,6 +55,7 @@ flutter:
 
   assets: 
     - lib/ui/res/images/
+    - lib/ui/res/icons/
   # assets:
   #  - lib/
   #  - lib/domain/
