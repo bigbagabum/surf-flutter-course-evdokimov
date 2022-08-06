@@ -42,20 +42,13 @@ class SightCard extends StatelessWidget {
                                     fontWeight: FontWeight.bold))),
                         const Spacer(),
                         Container(
-                            padding: const EdgeInsets.all(16),
-                            alignment: Alignment.topRight,
-                            child:
-                                Stack(alignment: Alignment.topRight, children: [
-                              Image(
-                                image: AssetImage(
-                                    'lib/ui/res/icons/heart_icon.png'),
-                              ),
-                              Container(
-                                  margin: EdgeInsets.only(top: 4, right: 4),
-                                  child: Image(
-                                      image: AssetImage(
-                                          'lib/ui/res/icons/heart_icon_shine.png')))
-                            ]))
+                          padding: const EdgeInsets.all(16),
+                          alignment: Alignment.topRight,
+                          child: Image(
+                            image:
+                                AssetImage('lib/ui/res/icons/heart_icon.png'),
+                          ),
+                        )
                       ]))),
               Flexible(
                   flex: 1,
