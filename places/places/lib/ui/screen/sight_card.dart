@@ -15,8 +15,6 @@ class SightCard extends StatelessWidget {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(15)),
           ),
-
-          //height: 188,
           width: double.infinity,
           child: Column(
             children: [
@@ -29,9 +27,29 @@ class SightCard extends StatelessWidget {
                         Container(
                             width: double.infinity,
                             child: Image(
-                              image: AssetImage(sight!.img),
-                              fit: BoxFit.cover,
-                            )),
+                                image: AssetImage(sight!.img),
+                                fit: BoxFit.cover,
+                                loadingBuilder: (BuildContext context,
+                                    Widget child,
+                                    ImageChunkEvent? loadingProgress) {
+                                  if (loadingProgress == null) {
+                                    return child;
+                                  }
+                                  return Center(
+                                    child: CircularProgressIndicator(
+                                      value:
+                                          loadingProgress.expectedTotalBytes !=
+                                                  null
+                                              ? loadingProgress
+                                                      .cumulativeBytesLoaded /
+                                                  loadingProgress
+                                                      .expectedTotalBytes!
+                                              : null,
+                                    ),
+
+                                    //child
+                                  );
+                                })),
                         Row(children: [
                           Container(
                               padding: const EdgeInsets.all(16),

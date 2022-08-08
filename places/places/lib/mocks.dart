@@ -16,7 +16,7 @@ final mocks = [
       'гостинница',
       55.68,
       37.57,
-      'lib/ui/res/images/kristal.jpg'),
+      'lib/ui/res/images/kristal1.jpg'),
   Sight(
       'Metropol',
       'https://metropol-moscow.ru/',
