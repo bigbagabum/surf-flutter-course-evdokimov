@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/app_theme.dart';
 
 class SightCard extends StatelessWidget {
   final Sight? sight;
@@ -64,10 +65,7 @@ class SightCard extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.all(16),
                             alignment: Alignment.topRight,
-                            child: const Image(
-                              image:
-                                  AssetImage('lib/ui/res/icons/heart_icon.png'),
-                            ),
+                            child: AppImage.heart_img_light,
                           )
                         ])
                       ]))),
