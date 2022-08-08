@@ -44,7 +44,12 @@ class _SightListScreenState extends State<SightListScreen> {
         appBar: MyAppBar(),
         body: SingleChildScrollView(
             child: Column(
-                children:
-                    mocks.map((mock) => SightCard(sight: mock)).toList())));
+          children:
+              //  LinearProgressIndicator(
+              //       backgroundColor: Colors.green,
+              //       valueColor: new AlwaysStoppedAnimation<Color>(Colors.red)
+              //     ),
+              mocks.map((mock) => SightCard(sight: mock)).toList(),
+        )));
   }
 }

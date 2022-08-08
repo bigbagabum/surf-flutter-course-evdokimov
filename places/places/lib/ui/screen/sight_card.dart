@@ -11,13 +11,10 @@ class SightCard extends StatelessWidget {
         aspectRatio: 3 / 2,
         child: Container(
           margin: const EdgeInsets.all(15),
-
-          decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(15)),
-              image: DecorationImage(
-                image: AssetImage(sight!.img),
-                fit: BoxFit.cover,
-              )),
+          clipBehavior: Clip.hardEdge,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+          ),
 
           //height: 188,
           width: double.infinity,
@@ -26,29 +23,35 @@ class SightCard extends StatelessWidget {
               Flexible(
                   flex: 1,
                   child: Container(
-                      //height: 94,
-
                       width: double.infinity,
                       alignment: Alignment.topCenter,
-                      child: Row(children: [
+                      child: Stack(clipBehavior: Clip.none, children: [
                         Container(
+                            width: double.infinity,
+                            child: Image(
+                              image: AssetImage(sight!.img),
+                              fit: BoxFit.cover,
+                            )),
+                        Row(children: [
+                          Container(
+                              padding: const EdgeInsets.all(16),
+                              alignment: Alignment.topLeft,
+                              child: Text(sight!.type,
+                                  style: const TextStyle(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold))),
+                          const Spacer(),
+                          Container(
                             padding: const EdgeInsets.all(16),
-                            alignment: Alignment.topLeft,
-                            child: Text(sight!.type,
-                                style: const TextStyle(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold))),
-                        const Spacer(),
-                        Container(
-                          padding: const EdgeInsets.all(16),
-                          alignment: Alignment.topRight,
-                          child: Image(
-                            image:
-                                AssetImage('lib/ui/res/icons/heart_icon.png'),
-                          ),
-                        )
+                            alignment: Alignment.topRight,
+                            child: const Image(
+                              image:
+                                  AssetImage('lib/ui/res/icons/heart_icon.png'),
+                            ),
+                          )
+                        ])
                       ]))),
               Flexible(
                   flex: 1,
