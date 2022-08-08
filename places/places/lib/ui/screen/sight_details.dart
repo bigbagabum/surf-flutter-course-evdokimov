@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/app_theme.dart';
 
 class SightDetails extends StatelessWidget {
   final Sight? sight;
@@ -11,19 +12,35 @@ class SightDetails extends StatelessWidget {
         child: Container(
             color: Colors.white,
             child: Column(children: [
-              Container(
-                alignment: Alignment.topLeft,
-                height: 360,
-                width: 360,
-                color: Colors.green,
-                child: Container(
-                    margin: const EdgeInsets.only(left: 16, top: 36),
-                    height: 32,
-                    width: 32,
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.white)),
-              ),
+              AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: Stack(children: [
+                    Container(
+                        height: double.infinity,
+                        child: Image(
+                            image: AssetImage(sight!.img),
+                            fit: BoxFit.fitHeight,
+                            loadingBuilder: (BuildContext context, Widget child,
+                                ImageChunkEvent? loadingProgress) {
+                              if (loadingProgress == null) {
+                                return child;
+                              }
+                              return Center(
+                                child: CircularProgressIndicator(
+                                  value: loadingProgress.expectedTotalBytes !=
+                                          null
+                                      ? loadingProgress.cumulativeBytesLoaded /
+                                          loadingProgress.expectedTotalBytes!
+                                      : null,
+                                ),
+
+                                //child
+                              );
+                            })),
+                    Container(
+                        margin: const EdgeInsets.only(left: 16, top: 36),
+                        child: AppImage.back_light),
+                  ])),
               const SizedBox(
                 height: 5,
                 width: double.infinity,
@@ -87,12 +104,20 @@ class SightDetails extends StatelessWidget {
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(12)),
                                     color: Colors.green),
-                                alignment: Alignment.center,
-                                child: const Text('ПРОЛОЖИТЬ МАРШРУТ',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontFamily: 'Roboto',
-                                        color: Colors.white)))),
+                                child: Center(
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                      Container(
+                                          margin: EdgeInsets.only(right: 10),
+                                          child: AppImage.way_light),
+                                      const Text('ПОСТРОИТЬ МАРШРУТ',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontFamily: 'Roboto',
+                                              color: Colors.white))
+                                    ])))),
                         Container(
                             alignment: Alignment.center,
                             child: Container(
@@ -106,22 +131,12 @@ class SightDetails extends StatelessWidget {
                                 height: 40,
                                 alignment: Alignment.center,
                                 child: Row(children: [
-                                  Container(
-                                    child: const Icon(Icons.calendar_month,
-                                        size: 30,
-                                        color: Color.fromRGBO(
-                                            124, 126, 146, 0.56)),
-                                    // color: Colors.amber,
-                                    // width: 20,
-                                    // height: 18,
-                                    // margin: const EdgeInsets.only(right: 10)
-                                  ),
+                                  AppImage.calendar_dark,
                                   const Text(
                                     'Запланировать',
                                     style: TextStyle(
                                         fontSize: 14,
-                                        color: Color.fromRGBO(
-                                            124, 126, 146, 0.56)),
+                                        color: Color.fromARGB(255, 58, 63, 91)),
                                   )
                                 ])),
                             Container(
@@ -129,15 +144,7 @@ class SightDetails extends StatelessWidget {
                                 height: 40,
                                 alignment: Alignment.center,
                                 child: Row(children: [
-                                  Container(
-                                    child: const Icon(Icons.favorite_border,
-                                        size: 30,
-                                        color: Color.fromARGB(255, 58, 63, 91)),
-                                    // color: Colors.amber,
-                                    // width: 20,
-                                    // height: 18,
-                                    // margin: const EdgeInsets.only(right: 10),
-                                  ),
+                                  Container(child: AppImage.heart_img_dark),
                                   const Text('В избранное',
                                       style: TextStyle(
                                           //fontFamily: 'Roboto',
