@@ -40,12 +40,16 @@ class SightListScreen extends StatefulWidget {
 class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
-    //var size = Size.fromHeight(72);
     return Scaffold(
         appBar: MyAppBar(),
         body: SingleChildScrollView(
             child: Column(
-                children:
-                    mocks.map((mock) => SightCard(sight: mock)).toList())));
+          children:
+              //  LinearProgressIndicator(
+              //       backgroundColor: Colors.green,
+              //       valueColor: new AlwaysStoppedAnimation<Color>(Colors.red)
+              //     ),
+              mocks.map((mock) => SightCard(sight: mock)).toList(),
+        )));
   }
 }

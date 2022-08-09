@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:places/mocks.dart';
+import 'package:places/ui/screen/sight_card.dart';
 import 'package:places/ui/screen/sight_details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
-import 'package:places/domain/sight.dart';
+import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_card.dart';
-
-//import 'package:places/ui/screen/sight_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,8 +29,8 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const SightListScreen());
-    //home: SightDetails(sight: mocks[3]));
+        // home: const SightListScreen());
+        home: SightDetails(sight: mocks[0]));
   }
 }
 
