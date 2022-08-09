@@ -126,32 +126,44 @@ class SightDetails extends StatelessWidget {
                                 color: Color.fromRGBO(124, 126, 146, 0.56))),
                         Row(
                           children: [
-                            Container(
-                                width: 164,
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Row(children: [
-                                  AppImage.calendar_dark,
-                                  const Text(
-                                    'Запланировать',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromARGB(255, 58, 63, 91)),
-                                  )
-                                ])),
-                            Container(
-                                width: 164,
-                                height: 40,
-                                alignment: Alignment.center,
-                                child: Row(children: [
-                                  Container(child: AppImage.heart_img_dark),
-                                  const Text('В избранное',
-                                      style: TextStyle(
-                                          //fontFamily: 'Roboto',
-                                          fontSize: 14,
-                                          color:
-                                              Color.fromARGB(255, 58, 63, 91)))
-                                ]))
+                            Flexible(
+                                flex: 1,
+                                child: Container(
+                                    //width: 164,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          AppImage.calendar_dark,
+                                          const Text(
+                                            'Запланировать',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 58, 63, 91)),
+                                          )
+                                        ]))),
+                            Flexible(
+                                flex: 1,
+                                child: Container(
+                                    //width: 164,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                              child: AppImage.heart_img_dark),
+                                          const Text('В избранное',
+                                              style: TextStyle(
+                                                  //fontFamily: 'Roboto',
+                                                  fontSize: 14,
+                                                  color: Color.fromARGB(
+                                                      255, 58, 63, 91)))
+                                        ])))
                           ],
                         ),
                       ]))
