@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 /// Строковые константы приложения
 class AppStrings {
   static const appTitle = "Список\nинтересных мест";
+  static const tabPlanned = "Хочу посетить";
+  static const tabVisited = 'Посетил';
+  static const titleScreenFavorite = 'Избранное';
 }
 
 class AppAssets {
@@ -22,10 +25,15 @@ class AppTypography {
       fontFamily: "Roboto",
       fontWeight: FontWeight.bold,
       height: 1);
+
+  static const textText14bold = TextStyle(
+      fontSize: 14.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold);
 }
 
 class AppColors {
-  static const myColor = Colors.red;
+  static const lightGrey = Color.fromARGB(255, 245, 245, 245);
+  static const darkGrey = Color.fromRGBO(124, 126, 146, 0.56);
+  static const darkButton = Color.fromRGBO(59, 62, 91, 1);
 }
 
 class AppSize {
@@ -40,7 +48,7 @@ class AppImage {
 
   static const heart_img_light = Image(
       image: AssetImage('lib/ui/res/icons/heart_icon.png'),
-      color: Color.fromRGBO(124, 126, 146, 0.56));
+      color: AppColors.lightGrey);
   static const calendar_dark = Image(
       image: AssetImage('lib/ui/res/icons/calendar.png'),
       color: Color.fromARGB(255, 58, 63, 91));

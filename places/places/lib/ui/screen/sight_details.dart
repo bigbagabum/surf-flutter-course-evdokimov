@@ -127,7 +127,6 @@ class SightDetails extends StatelessWidget {
                         Row(
                           children: [
                             Flexible(
-                                flex: 1,
                                 child: Container(
                                     //width: 164,
                                     height: 40,

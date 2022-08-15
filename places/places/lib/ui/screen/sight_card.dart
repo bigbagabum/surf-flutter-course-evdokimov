@@ -14,13 +14,14 @@ class SightCard extends StatelessWidget {
           margin: const EdgeInsets.all(15),
           clipBehavior: Clip.hardEdge,
           decoration: const BoxDecoration(
+            color: Colors.yellow,
             borderRadius: BorderRadius.all(Radius.circular(15)),
           ),
           width: double.infinity,
           child: Column(
             children: [
               Flexible(
-                  flex: 1,
+                  //flex: 1,
                   child: Container(
                       width: double.infinity,
                       alignment: Alignment.topCenter,
@@ -70,12 +71,12 @@ class SightCard extends StatelessWidget {
                         ])
                       ]))),
               Flexible(
-                  flex: 1,
+                  //flex: 1,
                   child: Container(
                       padding: const EdgeInsets.all(16),
                       //height: double.infinity,
                       width: double.infinity,
-                      color: const Color.fromARGB(245, 245, 245, 245),
+                      color: AppColors.lightGrey,
                       child: Column(children: [
                         Container(
                             height: 42,
