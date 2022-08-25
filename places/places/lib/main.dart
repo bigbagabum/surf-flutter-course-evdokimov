@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const VisitingScreen());
+        home: VisitingScreen());
     //home: const SightListScreen());
     //home: SightDetails(sight: mocks[0]));
   }

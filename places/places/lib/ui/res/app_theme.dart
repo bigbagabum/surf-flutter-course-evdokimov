@@ -53,6 +53,14 @@ class AppImage {
       image: AssetImage('lib/ui/res/icons/calendar.png'),
       color: Color.fromARGB(255, 58, 63, 91));
 
+  static const calendar_light = Image(
+      image: AssetImage('lib/ui/res/icons/calendar.png'),
+      color: AppColors.lightGrey);
+
+  static const cancel_light = Image(
+      image: AssetImage('lib/ui/res/icons/cancel.png'),
+      color: AppColors.lightGrey);
+
   static const back_light =
       Image(image: AssetImage('lib/ui/res/icons/ARROW.png'));
 

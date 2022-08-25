@@ -8,7 +8,8 @@ final mocks = [
       'отель',
       55.66,
       37.62,
-      'lib/ui/res/images/jazz.jpg'),
+      'lib/ui/res/images/jazz.jpg',
+      0),
   Sight(
       'Kristal Hotel',
       'http://hkristal.ru/',
@@ -16,7 +17,8 @@ final mocks = [
       'гостинница',
       55.68,
       37.57,
-      'lib/ui/res/images/kristal.jpg'),
+      'lib/ui/res/images/kristal.jpg',
+      1),
   Sight(
       'Metropol',
       'https://metropol-moscow.ru/',
@@ -25,5 +27,6 @@ final mocks = [
       'отель',
       55.75,
       37.62,
-      'lib/ui/res/images/metropol.jpg')
+      'lib/ui/res/images/metropol.jpg',
+      2)
 ];

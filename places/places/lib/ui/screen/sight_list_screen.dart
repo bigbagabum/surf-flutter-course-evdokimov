@@ -31,6 +31,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class SightListScreen extends StatefulWidget {
+  static final listIndex = 0;
+
   const SightListScreen({Key? key}) : super(key: key);
 
   @override
@@ -44,12 +46,10 @@ class _SightListScreenState extends State<SightListScreen> {
         appBar: MyAppBar(),
         body: SingleChildScrollView(
             child: Column(
-          children:
-              //  LinearProgressIndicator(
-              //       backgroundColor: Colors.green,
-              //       valueColor: new AlwaysStoppedAnimation<Color>(Colors.red)
-              //     ),
-              mocks.map((mock) => SightCard(sight: mock)).toList(),
+          children: mocks
+              .map((mock) =>
+                  SightCard(sight: mock, listIndex: SightListScreen.listIndex))
+              .toList(),
         )));
   }
 }

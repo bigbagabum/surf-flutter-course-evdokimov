@@ -2,9 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/app_theme.dart';
 
+Widget topIconRow(int listIndex, status) {
+  if (listIndex == 0) {
+    // 0 - общий список. 1 - планирую посетить, 2 - посетил
+    return AppImage.heart_img_light;
+  } else {
+    if (status == 1) {
+      //0 - ни к чему не относится карточка, 1 - хотел бы посетить, 2 - посетил
+      return Row(children: [AppImage.calendar_light, AppImage.cancel_light]);
+    } else {
+      return Row(children: [AppImage.calendar_light, AppImage.cancel_light]);
+    }
+  }
+}
+
 class SightCard extends StatelessWidget {
   final Sight? sight;
-  const SightCard({Key? key, this.sight}) : super(key: key);
+  final int listIndex;
+  const SightCard({Key? key, required this.sight, required this.listIndex})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +30,7 @@ class SightCard extends StatelessWidget {
           margin: const EdgeInsets.all(15),
           clipBehavior: Clip.hardEdge,
           decoration: const BoxDecoration(
-            color: Colors.yellow,
+            //color: Colors.yellow,
             borderRadius: BorderRadius.all(Radius.circular(15)),
           ),
           width: double.infinity,
@@ -62,12 +78,14 @@ class SightCard extends StatelessWidget {
                                       color: Colors.white,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold))),
-                          const Spacer(),
+                          // const Spacer(),
                           Container(
-                            padding: const EdgeInsets.all(16),
-                            alignment: Alignment.topRight,
-                            child: AppImage.heart_img_light,
-                          )
+                              width: double.infinity,
+                              padding: const EdgeInsets.all(16),
+                              alignment: Alignment.topRight,
+                              child:
+                                  // смотрим в каком мы списке и отображаем нужные иконки справа сверху
+                                  topIconRow(listIndex, sight?.status))
                         ])
                       ]))),
               Flexible(
