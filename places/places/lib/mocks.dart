@@ -9,7 +9,7 @@ final mocks = [
       55.66,
       37.62,
       'lib/ui/res/images/jazz.jpg',
-      0),
+      1),
   Sight(
       'Kristal Hotel',
       'http://hkristal.ru/',

@@ -4,8 +4,23 @@ import 'package:places/mocks.dart';
 import 'package:places/ui/res/app_theme.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
+// получаем список в зависимости от статуса
+List<SightCard> listOfSights(List listSights, statusSight) {
+  List<SightCard> list = [];
+  int i;
+  for (i = 0; i < listSights.length; i++) {
+    if (listSights[i].status == statusSight) {
+      list.add(SightCard(sight: listSights[i], listIndex: 1));
+    }
+  }
+
+  return list;
+
+  //return mocks.map((mock) => SightCard(sight: mock, listIndex: 1)).toList();
+}
+
 class VisitingScreen extends StatefulWidget {
-  VisitingScreen({Key? key}) : super(key: key);
+  const VisitingScreen({Key? key}) : super(key: key);
   @override
   State<VisitingScreen> createState() => _VisitingScreenState();
 }
@@ -13,16 +28,16 @@ class VisitingScreen extends StatefulWidget {
 class _VisitingScreenState extends State<VisitingScreen>
     with SingleTickerProviderStateMixin {
   late TabController _controller;
-  int _selectIndex = 1;
-  int listIndex = 1;
+  int _selectIndex = 0;
+  int listIndex2 = 1;
 
-  List<Widget> list =
-      mocks.map((mock) => SightCard(sight: mock, listIndex: 1)).toList();
+  //List<Widget> list =
+  //  mocks.map((mock) => SightCard(sight: mock, listIndex: listIndex2)).toList();
 
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: list.length, vsync: this);
+    _controller = TabController(length: 2, vsync: this);
     _controller.addListener(() {
       setState(() {
         _selectIndex = _controller.index;
@@ -41,7 +56,7 @@ class _VisitingScreenState extends State<VisitingScreen>
             if (!_controller.indexIsChanging) {
               // Your code goes here.
               // To get index of current tab use tabController.index
-              listIndex = _controller.index + 1;
+              _selectIndex = _controller.index;
             }
           });
           return Scaffold(
@@ -93,18 +108,11 @@ class _VisitingScreenState extends State<VisitingScreen>
             ),
             body: TabBarView(controller: _controller, children: [
               SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SightCard(sight: mocks[0], listIndex: listIndex),
-                    SightCard(sight: mocks[1], listIndex: listIndex)
-                  ],
-                ),
+                child: Column(children: listOfSights(mocks, 1)),
               ),
               SingleChildScrollView(
                 child: Column(
-                  children: [
-                    SightCard(sight: mocks[2], listIndex: listIndex),
-                  ],
+                  children: listOfSights(mocks, 2),
                 ),
               ),
             ]),

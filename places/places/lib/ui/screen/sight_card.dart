@@ -3,15 +3,26 @@ import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/app_theme.dart';
 
 Widget topIconRow(int listIndex, status) {
+  print('hello');
   if (listIndex == 0) {
-    // 0 - общий список. 1 - планирую посетить, 2 - посетил
+    // 0 - общий список. 1 - планов и результатов
+    // status = 1 - планирую посетить, 2 - посетил
+    print(listIndex.toString());
     return AppImage.heart_img_light;
   } else {
     if (status == 1) {
+      print('listIndex = ' +
+          listIndex.toString() +
+          ' status = ' +
+          status.toString());
       //0 - ни к чему не относится карточка, 1 - хотел бы посетить, 2 - посетил
       return Row(children: [AppImage.calendar_light, AppImage.cancel_light]);
     } else {
-      return Row(children: [AppImage.calendar_light, AppImage.cancel_light]);
+      print('listIndex = ' +
+          listIndex.toString() +
+          ' status = ' +
+          status.toString());
+      return Row(children: [AppImage.way_light, AppImage.cancel_light]);
     }
   }
 }
@@ -78,14 +89,19 @@ class SightCard extends StatelessWidget {
                                       color: Colors.white,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold))),
-                          // const Spacer(),
+                          const Spacer(),
                           Container(
-                              width: double.infinity,
                               padding: const EdgeInsets.all(16),
                               alignment: Alignment.topRight,
                               child:
+
                                   // смотрим в каком мы списке и отображаем нужные иконки справа сверху
-                                  topIconRow(listIndex, sight?.status))
+                                  Row(
+                                children: [
+                                  // Icon(Icons.access_alarm, color: Colors.white),
+                                  topIconRow(listIndex, sight?.status),
+                                ],
+                              ))
                         ])
                       ]))),
               Flexible(

@@ -31,7 +31,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class SightListScreen extends StatefulWidget {
-  static final listIndex = 0;
+  static const listIndex = 0;
 
   const SightListScreen({Key? key}) : super(key: key);
 
