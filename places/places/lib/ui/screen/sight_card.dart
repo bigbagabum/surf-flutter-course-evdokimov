@@ -3,26 +3,40 @@ import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/app_theme.dart';
 
 Widget topIconRow(int listIndex, status) {
-  print('hello');
   if (listIndex == 0) {
-    // 0 - общий список. 1 - планов и результатов
-    // status = 1 - планирую посетить, 2 - посетил
-    print(listIndex.toString());
     return AppImage.heart_img_light;
   } else {
     if (status == 1) {
-      print('listIndex = ' +
-          listIndex.toString() +
-          ' status = ' +
-          status.toString());
       //0 - ни к чему не относится карточка, 1 - хотел бы посетить, 2 - посетил
-      return Row(children: [AppImage.calendar_light, AppImage.cancel_light]);
+      return Row(
+          children: const [AppImage.calendar_light, AppImage.cancel_light]);
     } else {
-      print('listIndex = ' +
-          listIndex.toString() +
-          ' status = ' +
-          status.toString());
-      return Row(children: [AppImage.way_light, AppImage.cancel_light]);
+      return Row(children: const [AppImage.way_light, AppImage.cancel_light]);
+    }
+  }
+}
+
+Widget bottomColumnData(int listIndex, Sight sight) {
+  if (listIndex == 0) {
+    return Text(sight.details,
+        overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 14));
+  } else {
+    if (sight.status == 1) {
+      //0 - ни к чему не относится карточка, 1 - хотел бы посетить, 2 - посетил
+      return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('Запланировано на 01.01.23\n',
+                style: TextStyle(color: Colors.green)),
+            Text('Закрыто до 09:00')
+          ]);
+    } else {
+      return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('Цель достигнута 20.08.22\n'),
+            Text('открыто круглосуточно')
+          ]);
     }
   }
 }
@@ -30,7 +44,8 @@ Widget topIconRow(int listIndex, status) {
 class SightCard extends StatelessWidget {
   final Sight? sight;
   final int listIndex;
-  const SightCard({Key? key, required this.sight, required this.listIndex})
+  const SightCard(
+      {Key? key, required Sight this.sight, required this.listIndex})
       : super(key: key);
 
   @override
@@ -113,7 +128,7 @@ class SightCard extends StatelessWidget {
                       color: AppColors.lightGrey,
                       child: Column(children: [
                         Container(
-                            height: 42,
+                            height: 25,
                             width: double.infinity,
                             child: Text(sight!.name,
                                 style: const TextStyle(
@@ -123,10 +138,9 @@ class SightCard extends StatelessWidget {
                                     fontWeight: FontWeight.bold))),
                         Container(
                             width: double.infinity,
-                            height: 20,
-                            child: Text(sight!.details,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(fontSize: 14))),
+
+                            //тут будет кастомная колонка отрисованная от выбранного списка
+                            child: bottomColumnData(listIndex, sight!)),
                       ])))
             ],
           ),
