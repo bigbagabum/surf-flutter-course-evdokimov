@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('lib/ui/res/icons/map.png'),
+                AssetImage('lib/ui/res/icons/heart_full.png'),
               ),
               label: '',
             ),
