@@ -30,9 +30,55 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: VisitingScreen());
-    //home: const SightListScreen());
-    //home: SightDetails(sight: mocks[0]));
+        //   home: VisitingScreen());
+        //home: const SightListScreen());
+        //home: SightDetails(sight: mocks[0]));
+        home: HomePage());
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+  static const List<Widget> _screenSelected = <Widget>[
+    SightListScreen(),
+    VisitingScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: _screenSelected.elementAt(_selectedIndex),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('lib/ui/res/icons/list.png'),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('lib/ui/res/icons/map.png'),
+              ),
+              label: '',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+        ));
   }
 }
 

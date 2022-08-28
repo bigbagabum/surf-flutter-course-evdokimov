@@ -64,5 +64,16 @@ class AppImage {
   static const back_light =
       Image(image: AssetImage('lib/ui/res/icons/ARROW.png'));
 
+  static const list_sights =
+      Image(image: AssetImage('lib/ui/res/icons/list.png'));
+
+  static const map_icon = Image(image: AssetImage('lib/ui/res/icons/map.png'));
+
+  static const heart_full =
+      Image(image: AssetImage('lib/ui/res/icons/heart_full'));
+
+  static const settings_icon =
+      Image(image: AssetImage('lib/ui/res/icons/settings.png'));
+
   static const way_light = Image(image: AssetImage('lib/ui/res/icons/way.png'));
 }

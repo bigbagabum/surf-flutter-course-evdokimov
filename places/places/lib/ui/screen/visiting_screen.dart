@@ -116,6 +116,34 @@ class _VisitingScreenState extends State<VisitingScreen>
                 ),
               ),
             ]),
+            // bottomNavigationBar: BottomNavigationBar(
+            //   items: const <BottomNavigationBarItem>[
+            //     BottomNavigationBarItem(
+            //       icon: ImageIcon(
+            //         AssetImage('lib/ui/res/icons/list.png'),
+            //       ),
+            //       label: '',
+            //     ),
+            //     BottomNavigationBarItem(
+            //       icon: ImageIcon(
+            //         AssetImage('lib/ui/res/icons/map.png'),
+            //       ),
+            //       label: '',
+            //     ),
+            //     // BottomNavigationBarItem(
+            //   icon: ImageIcon(
+            //     AssetImage('lib/ui/res/icons/heart_full.png'),
+            //   ),
+            //   label: '',
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: ImageIcon(
+            //     AssetImage('lib/ui/res/icons/settings.png'),
+            //   ),
+            //   label: '',
+            // ),
+            //],
+            //)
           );
         }));
   }
