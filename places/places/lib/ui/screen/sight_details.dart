@@ -15,7 +15,7 @@ class SightDetails extends StatelessWidget {
               AspectRatio(
                   aspectRatio: 1 / 1,
                   child: Stack(children: [
-                    Container(
+                    SizedBox(
                         height: double.infinity,
                         child: Image(
                             image: AssetImage(sight!.img),
@@ -39,7 +39,8 @@ class SightDetails extends StatelessWidget {
                             })),
                     Container(
                         margin: const EdgeInsets.only(left: 16, top: 36),
-                        child: AppImage.back_light),
+                        child: const Image(
+                            image: AssetImage('lib/ui/res/icons/ARROW.png'))),
                   ])),
               const SizedBox(
                 height: 5,
@@ -54,7 +55,7 @@ class SightDetails extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
+                        SizedBox(
                             width: double.infinity,
                             child: Text(
                               sight!.name,
@@ -66,14 +67,13 @@ class SightDetails extends StatelessWidget {
                               ),
                             )),
                         Row(children: [
-                          Container(
-                              child: Text(
+                          Text(
                             sight!.type,
                             style: const TextStyle(
                                 fontSize: 14,
                                 color: Colors.black,
                                 fontFamily: 'Roboto'),
-                          )),
+                          ),
                           Container(
                               margin: const EdgeInsets.only(left: 16.0),
                               child: const Text('открыто 24 часа',
@@ -110,8 +110,11 @@ class SightDetails extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                       Container(
-                                          margin: EdgeInsets.only(right: 10),
-                                          child: AppImage.way_light),
+                                          margin:
+                                              const EdgeInsets.only(right: 10),
+                                          child: const Image(
+                                              image: AssetImage(
+                                                  'lib/ui/res/icons/way.png'))),
                                       const Text('ПОСТРОИТЬ МАРШРУТ',
                                           style: TextStyle(
                                               fontSize: 14,
@@ -123,7 +126,8 @@ class SightDetails extends StatelessWidget {
                             child: Container(
                                 width: 328,
                                 height: 1,
-                                color: Color.fromRGBO(124, 126, 146, 0.56))),
+                                color:
+                                    const Color.fromRGBO(124, 126, 146, 0.56))),
                         Row(
                           children: [
                             Flexible(
@@ -134,9 +138,12 @@ class SightDetails extends StatelessWidget {
                                     child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
-                                        children: [
-                                          AppImage.calendar_dark,
-                                          const Text(
+                                        children: const [
+                                          Image(
+                                              image: AssetImage(
+                                                  'lib/ui/res/icons/calendar.png'),
+                                              color: AppColors.darkIcon),
+                                          Text(
                                             'Запланировать',
                                             style: TextStyle(
                                                 fontSize: 14,
@@ -153,10 +160,12 @@ class SightDetails extends StatelessWidget {
                                     child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                              child: AppImage.heart_img_dark),
-                                          const Text('В избранное',
+                                        children: const [
+                                          Image(
+                                              image: AssetImage(
+                                                  'lib/ui/res/icons/heart_icon.png'),
+                                              color: AppColors.darkIcon),
+                                          Text('В избранное',
                                               style: TextStyle(
                                                   //fontFamily: 'Roboto',
                                                   fontSize: 14,
