@@ -58,7 +58,6 @@ class _VisitingScreenState extends State<VisitingScreen>
               color: AppColors.lightGrey,
             ),
             child: TabBar(
-                onTap: (index) {},
                 controller: _controller,
                 unselectedLabelColor: AppColors.darkGrey,
                 indicator: BoxDecoration(
