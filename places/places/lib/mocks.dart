@@ -9,7 +9,7 @@ final mocks = [
       55.66,
       37.62,
       'lib/ui/res/images/jazz.jpg',
-      1),
+      SightStatus.sightToVisit),
   Sight(
       'Kristal Hotel',
       'http://hkristal.ru/',
@@ -18,7 +18,7 @@ final mocks = [
       55.68,
       37.57,
       'lib/ui/res/images/kristal.jpg',
-      1),
+      SightStatus.sightToVisit),
   Sight(
       'Metropol',
       'https://metropol-moscow.ru/',
@@ -28,5 +28,5 @@ final mocks = [
       55.75,
       37.62,
       'lib/ui/res/images/metropol.jpg',
-      2)
+      SightStatus.sightVisited)
 ];
