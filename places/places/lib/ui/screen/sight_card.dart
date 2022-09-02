@@ -1,12 +1,13 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/app_theme.dart';
 
-class SightCard extends StatelessWidget {
-  final Sight sight;
-  // ignore: prefer_typing_uninitialized_variables
-  final listIndex;
-  const SightCard({Key? key, required this.sight, required this.listIndex})
+class TopIconWidget extends StatelessWidget {
+  final dynamic status, listIndex;
+
+  const TopIconWidget({Key? key, required this.status, required this.listIndex})
       : super(key: key);
 
   Widget _topIconRow() {
@@ -20,7 +21,7 @@ class SightCard extends StatelessWidget {
       case SightListIndex.planList:
         // список хотелок
         //print('Список хотелок');
-        switch (sight.status) {
+        switch (status) {
           case SightStatus.sightNoPlans:
             break;
 
@@ -46,6 +47,18 @@ class SightCard extends StatelessWidget {
     }
     throw '';
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return _topIconRow();
+  }
+}
+
+class BottomColumn extends StatelessWidget {
+  final dynamic listIndex;
+  final Sight sight;
+  const BottomColumn({Key? key, required this.sight, required this.listIndex})
+      : super(key: key);
 
   Widget _bottomColumnData() {
     switch (listIndex) {
@@ -74,6 +87,19 @@ class SightCard extends StatelessWidget {
     }
     throw '';
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return _bottomColumnData();
+  }
+}
+
+class SightCard extends StatelessWidget {
+  final Sight sight;
+  // ignore: prefer_typing_uninitialized_variables
+  final listIndex;
+  const SightCard({Key? key, required this.sight, required this.listIndex})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +166,11 @@ class SightCard extends StatelessWidget {
                                   // смотрим в каком мы списке и отображаем нужные иконки справа сверху
                                   Row(
                                 children: [
-                                  _topIconRow(),
+                                  TopIconWidget(
+                                    listIndex: listIndex,
+                                    status: sight.status,
+                                  )
+                                  //_topIconRow(),
                                 ],
                               ))
                         ])
@@ -166,7 +196,8 @@ class SightCard extends StatelessWidget {
                             width: double.infinity,
 
                             //тут будет кастомная колонка отрисованная от выбранного списка
-                            child: _bottomColumnData()),
+                            child: BottomColumn(
+                                sight: sight, listIndex: listIndex)),
                       ])))
             ],
           ),
