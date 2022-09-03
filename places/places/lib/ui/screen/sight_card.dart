@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/app_theme.dart';
@@ -98,8 +96,11 @@ class SightCard extends StatelessWidget {
   final Sight sight;
   // ignore: prefer_typing_uninitialized_variables
   final listIndex;
-  const SightCard({Key? key, required this.sight, required this.listIndex})
-      : super(key: key);
+  const SightCard({
+    Key? key,
+    required this.sight,
+    required this.listIndex,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
