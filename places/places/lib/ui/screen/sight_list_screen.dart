@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_card.dart';
 import 'package:places/ui/res/app_theme.dart';
+import 'package:places/ui/res/app_strings.dart';
 
 // класс AppBar наследник от PrefferedSizeWidget
 
@@ -26,11 +28,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(AppSize.appBarHeight);
 }
 
 class SightListScreen extends StatefulWidget {
+  //final listIndex = SightListIndex.mainList;
+
   const SightListScreen({Key? key}) : super(key: key);
 
   @override
@@ -44,12 +47,12 @@ class _SightListScreenState extends State<SightListScreen> {
         appBar: MyAppBar(),
         body: SingleChildScrollView(
             child: Column(
-          children:
-              //  LinearProgressIndicator(
-              //       backgroundColor: Colors.green,
-              //       valueColor: new AlwaysStoppedAnimation<Color>(Colors.red)
-              //     ),
-              mocks.map((mock) => SightCard(sight: mock)).toList(),
+          children: mocks
+              .map((mock) => SightCard(
+                  sight: mock,
+                  listIndex: SightListIndex.mainList,
+                  status: mock.status))
+              .toList(),
         )));
   }
 }
