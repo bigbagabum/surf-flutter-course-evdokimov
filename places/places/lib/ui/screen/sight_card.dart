@@ -10,15 +10,11 @@ class TopIconWidget extends StatelessWidget {
 
   Widget _topIconRow() {
     switch (listIndex) {
-      case SightListIndex.mainList: //общий список
-        //print('Список общий');
+      case SightListIndex.mainList:
         return const Image(
-            // ignore: unnecessary_const
-            image: const AssetImage('lib/ui/res/icons/heart_icon.png'),
+            image: AssetImage('lib/ui/res/icons/heart_icon.png'),
             color: AppColors.lightGrey);
       case SightListIndex.planList:
-        // список хотелок
-        //print('Список хотелок');
         switch (status) {
           case SightStatus.sightNoPlans:
             break;
@@ -53,9 +49,10 @@ class TopIconWidget extends StatelessWidget {
 }
 
 class BottomColumn extends StatelessWidget {
-  final dynamic listIndex;
+  final dynamic listIndex, status;
   final Sight sight;
-  const BottomColumn({Key? key, required this.sight, required this.listIndex})
+  const BottomColumn(
+      {Key? key, required this.sight, required this.listIndex, this.status})
       : super(key: key);
 
   Widget _bottomColumnData() {
@@ -65,7 +62,7 @@ class BottomColumn extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(fontSize: 14));
       case SightListIndex.planList:
-        switch (sight.status) {
+        switch (status) {
           case SightStatus.sightToVisit:
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,12 +92,13 @@ class BottomColumn extends StatelessWidget {
 class SightCard extends StatelessWidget {
   final Sight sight;
   // ignore: prefer_typing_uninitialized_variables
-  final listIndex;
-  const SightCard({
-    Key? key,
-    required this.sight,
-    required this.listIndex,
-  }) : super(key: key);
+  final listIndex, status;
+  const SightCard(
+      {Key? key,
+      required this.sight,
+      required this.listIndex,
+      required this.status})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +167,7 @@ class SightCard extends StatelessWidget {
                                 children: [
                                   TopIconWidget(
                                     listIndex: listIndex,
-                                    status: sight.status,
+                                    status: status,
                                   )
                                   //_topIconRow(),
                                 ],
@@ -198,7 +196,9 @@ class SightCard extends StatelessWidget {
 
                             //тут будет кастомная колонка отрисованная от выбранного списка
                             child: BottomColumn(
-                                sight: sight, listIndex: listIndex)),
+                                sight: sight,
+                                listIndex: listIndex,
+                                status: status)),
                       ])))
             ],
           ),

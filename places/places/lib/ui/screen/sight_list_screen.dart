@@ -48,8 +48,10 @@ class _SightListScreenState extends State<SightListScreen> {
         body: SingleChildScrollView(
             child: Column(
           children: mocks
-              .map((mock) =>
-                  SightCard(sight: mock, listIndex: SightListIndex.mainList))
+              .map((mock) => SightCard(
+                  sight: mock,
+                  listIndex: SightListIndex.mainList,
+                  status: mock.status))
               .toList(),
         )));
   }

@@ -12,8 +12,10 @@ List<SightCard> listOfSights(List listSights, statusSight) {
   int i;
   for (i = 0; i < listSights.length; i++) {
     if (listSights[i].status == statusSight) {
-      list.add(
-          SightCard(sight: listSights[i], listIndex: SightListIndex.planList));
+      list.add(SightCard(
+          sight: listSights[i],
+          listIndex: SightListIndex.planList,
+          status: statusSight));
     }
   }
 
