@@ -25,6 +25,7 @@ class AppColors {
   static const darkGrey = Color.fromRGBO(124, 126, 146, 0.56);
   static const darkButton = Color.fromRGBO(59, 62, 91, 1);
   static const darkIcon = Color.fromARGB(255, 58, 63, 91);
+  static const dmBackground = Color.fromARGB(1, 33, 34, 44);
 }
 
 class AppSize {
