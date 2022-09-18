@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:places/mocks.dart';
 import 'package:places/ui/res/app_assets.dart';
 
 import 'package:places/ui/screen/res/themes.dart';
+import 'package:places/ui/screen/sight_details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
         //    primarySwatch: Colors.blue,
         // ),
         theme: darkTheme,
+        //theme: lightTheme,
 
         //   home: VisitingScreen());
         //home: const SightListScreen());

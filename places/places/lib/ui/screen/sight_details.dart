@@ -38,19 +38,26 @@ class SightDetails extends StatelessWidget {
                               );
                             })),
                     Container(
+                        height: 32,
+                        width: 32,
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
                         margin: const EdgeInsets.only(left: 16, top: 36),
-                        child: const Image(
-                            image: AssetImage('lib/ui/res/icons/ARROW.png'))),
+                        child: Image(
+                            color: Theme.of(context).primaryColorLight,
+                            image: AssetImage('lib/ui/res/icons/back.png'))),
                   ])),
-              const SizedBox(
-                height: 5,
-                width: double.infinity,
-              ),
+              // const SizedBox(
+              //   height: 0,
+              //   width: double.infinity,
+              // ),
               Container(
-                  //height: 400,
+                  height: 388,
                   width: double.infinity,
-                  color: Colors.white,
-                  margin: const EdgeInsets.all(16),
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -60,18 +67,18 @@ class SightDetails extends StatelessWidget {
                             child: Text(
                               sight!.name,
                               textAlign: TextAlign.left,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontFamily: 'Roboto',
-                                color: Colors.black,
+                                color: Theme.of(context).primaryColorLight,
                                 fontSize: 24,
                               ),
                             )),
                         Row(children: [
                           Text(
                             sight!.type,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.black,
+                                color: Theme.of(context).primaryColorLight,
                                 fontFamily: 'Roboto'),
                           ),
                           Container(
@@ -89,10 +96,11 @@ class SightDetails extends StatelessWidget {
                                 const EdgeInsets.only(top: 24.0, bottom: 24),
                             child: SingleChildScrollView(
                                 child: Text(sight!.details,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
-                                      color: Colors.black,
+                                      color:
+                                          Theme.of(context).primaryColorLight,
                                     )))),
                         Container(
                             width: double.infinity,
@@ -174,7 +182,7 @@ class SightDetails extends StatelessWidget {
                                         ])))
                           ],
                         ),
-                      ]))
+                      ])),
             ])));
   }
 }

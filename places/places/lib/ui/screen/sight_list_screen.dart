@@ -23,7 +23,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Text(
           AppStrings.appTitle,
           textAlign: TextAlign.left,
-          style: AppTypography.textText32Bold,
+          style: TextStyle(
+              fontSize: 32.0,
+              color: Theme.of(context).primaryColorLight,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.bold,
+              height: 1),
         ));
   }
 
