@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:places/ui/screen/res/themes.dart';
 
 /// Строковые константы приложения
