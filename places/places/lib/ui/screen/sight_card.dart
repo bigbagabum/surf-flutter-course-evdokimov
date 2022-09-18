@@ -55,28 +55,38 @@ class BottomColumn extends StatelessWidget {
       {Key? key, required this.sight, required this.listIndex, this.status})
       : super(key: key);
 
-  Widget _bottomColumnData() {
+  Widget _bottomColumnData(context) {
     switch (listIndex) {
       case SightListIndex.mainList:
         return Text(sight.details,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(fontSize: 14));
+            style: TextStyle(
+                fontSize: 14, color: Theme.of(context).primaryColorLight));
       case SightListIndex.planList:
         switch (status) {
           case SightStatus.sightToVisit:
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text('Запланировано на 01.01.23\n',
                       style: TextStyle(color: Colors.green)),
-                  Text('Закрыто до 09:00')
+                  Text('Закрыто до 09:00',
+                      style: TextStyle(
+                          color: Theme.of(context).secondaryHeaderColor))
                 ]);
           case SightStatus.sightVisited:
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text('Цель достигнута 20.08.22\n'),
-                  Text('открыто круглосуточно')
+                children: [
+                  Text(
+                    'Цель достигнута 20.08.22\n',
+                    style:
+                        TextStyle(color: Theme.of(context).primaryColorLight),
+                  ),
+                  Text('открыто круглосуточно',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColorLight,
+                      ))
                 ]);
         }
     }
@@ -85,7 +95,7 @@ class BottomColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _bottomColumnData();
+    return _bottomColumnData(context);
   }
 }
 
@@ -180,16 +190,17 @@ class SightCard extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       //height: double.infinity,
                       width: double.infinity,
-                      color: AppColors.lightGrey,
+                      color: Theme.of(context).primaryColorDark,
                       child: Column(children: [
                         SizedBox(
                             height: 25,
                             width: double.infinity,
                             child: Text(sight.name,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     fontSize: 16,
                                     overflow: TextOverflow.clip,
                                     fontFamily: 'Roboto',
+                                    color: Theme.of(context).primaryColorLight,
                                     fontWeight: FontWeight.bold))),
                         SizedBox(
                             width: double.infinity,

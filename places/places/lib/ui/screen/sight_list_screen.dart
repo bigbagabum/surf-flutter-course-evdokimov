@@ -19,7 +19,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         toolbarHeight: AppSize.toolBarSize,
         elevation: 0,
-        //backgroundColor: Colors.white10,
+        //backgroundColor: Colors.white,
         title: Text(
           AppStrings.appTitle,
           textAlign: TextAlign.left,

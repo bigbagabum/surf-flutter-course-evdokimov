@@ -48,7 +48,7 @@ class _VisitingScreenState extends State<VisitingScreen>
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 52,
-        backgroundColor: Colors.white,
+        //backgroundColor: Colors.white,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(52.0),
           child: Center(
@@ -57,34 +57,49 @@ class _VisitingScreenState extends State<VisitingScreen>
             height: 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(45),
-              color: AppColors.lightGrey,
+              color: Theme.of(context).primaryColorDark,
             ),
             child: TabBar(
                 controller: _controller,
                 unselectedLabelColor: AppColors.darkGrey,
+                labelColor: Theme.of(context).primaryColorDark,
                 indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(45),
-                    color: AppColors.darkButton),
+                    color: Theme.of(context).primaryColorLight
+                    //color: AppColors.darkButton
+                    ),
                 tabs: [
                   Container(
                       decoration: BoxDecoration(
                           // color: AppColors.darkButton,
                           borderRadius: BorderRadius.circular(45)),
-                      child: const Center(child: Text(AppStrings.tabPlanned))),
+                      child: const Center(
+                          child: Text(
+                        AppStrings.tabPlanned,
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.bold),
+                      ))),
                   Container(
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(45)),
-                    child: const Center(child: Text(AppStrings.tabVisited)),
+                    child: const Center(
+                        child: Text(
+                      AppStrings.tabVisited,
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    )),
                   )
                 ]),
           )),
           // child: ,
         ),
-        title: const Center(
+        title: Center(
           child: Text(
             AppStrings.titleScreenFavorite,
             style: TextStyle(
-                color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+                color: Theme.of(context).primaryColorLight,
+                fontSize: 18,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/screen/res/themes.dart';
 
 /// Строковые константы приложения
 
@@ -7,11 +8,12 @@ class AppTypography {
     fontSize: 16.0,
     height: 1.25,
     fontWeight: FontWeight.w400,
+    //color: Theme.of(context).primaryColorLight,
   );
 
   static const textText32Bold = TextStyle(
       fontSize: 32.0,
-      //color: Colors.black,
+      //color: Theme.of(context).primaryColorLight,
       fontFamily: "Roboto",
       fontWeight: FontWeight.bold,
       height: 1);
@@ -21,7 +23,8 @@ class AppTypography {
 }
 
 class AppColors {
-  static const dmCardBackground = Color.fromRGBO(26, 26, 32, 1);
+  static const dmPrimaryLightColor = Colors.white;
+  static const dmCardBackground = Colors.black;
   static const lightGrey = Color.fromARGB(255, 245, 245, 245);
   static const dmText = Color.fromRGBO(255, 255, 255, 1);
   static const darkGrey = Color.fromRGBO(124, 126, 146, 0.56);

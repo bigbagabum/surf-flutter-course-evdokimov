@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/ui/res/app_assets.dart';
+
 import 'package:places/ui/screen/res/themes.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        // theme: ThemeData(
+        //title: 'Flutter Demo',
+        //theme: ThemeData.dark(),
         //    primarySwatch: Colors.blue,
         // ),
         theme: darkTheme,
@@ -53,6 +54,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: _screenSelected.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
+          elevation: 1.0,
+          unselectedItemColor: Theme.of(context).secondaryHeaderColor,
+          selectedItemColor: Theme.of(context).primaryColorLight,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: ImageIcon(
