@@ -19,11 +19,16 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         toolbarHeight: AppSize.toolBarSize,
         elevation: 0,
-        backgroundColor: Colors.white10,
+        //backgroundColor: Colors.white,
         title: Text(
           AppStrings.appTitle,
           textAlign: TextAlign.left,
-          style: AppTypography.textText32Bold,
+          style: TextStyle(
+              fontSize: 32.0,
+              color: Theme.of(context).primaryColorLight,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.bold,
+              height: 1),
         ));
   }
 

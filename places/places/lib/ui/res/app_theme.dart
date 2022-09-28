@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:places/ui/screen/res/themes.dart';
 
 /// Строковые константы приложения
 
@@ -7,11 +9,12 @@ class AppTypography {
     fontSize: 16.0,
     height: 1.25,
     fontWeight: FontWeight.w400,
+    //color: Theme.of(context).primaryColorLight,
   );
 
   static const textText32Bold = TextStyle(
       fontSize: 32.0,
-      color: Colors.black,
+      //color: Theme.of(context).primaryColorLight,
       fontFamily: "Roboto",
       fontWeight: FontWeight.bold,
       height: 1);
@@ -21,46 +24,17 @@ class AppTypography {
 }
 
 class AppColors {
+  static const dmPrimaryLightColor = Colors.white;
+  static const dmCardBackground = Colors.black;
   static const lightGrey = Color.fromARGB(255, 245, 245, 245);
+  static const dmText = Color.fromRGBO(255, 255, 255, 1);
   static const darkGrey = Color.fromRGBO(124, 126, 146, 0.56);
   static const darkButton = Color.fromRGBO(59, 62, 91, 1);
   static const darkIcon = Color.fromARGB(255, 58, 63, 91);
+  static const dmBackground = Color.fromARGB(254, 33, 34, 44);
 }
 
 class AppSize {
   static const double appBarHeight = 72;
   static const double toolBarSize = 72;
-}
-
-class AppImage {
-  // static const heart_img_dark = Image(
-  //     image: AssetImage('lib/ui/res/icons/heart_icon.png'),
-  //     color: AppColors.darkIcon);
-
-  // static const heart_img_light = Image(
-  //     image: AssetImage('lib/ui/res/icons/heart_icon.png'),
-  //     color: AppColors.lightGrey);
-  // static const calendar_dark = Image(
-  //     image: AssetImage('lib/ui/res/icons/calendar.png'),
-  //     color: AppColors.darkIcon);
-
-  // static const calendar_light = Image(
-  //     image: AssetImage('lib/ui/res/icons/calendar.png'),
-  //     color: AppColors.lightGrey);
-
-  //static const cancel_light =
-  //Image(image: AssetImage('lib/ui/res/icons/cancel.png'), color: AppColors.lightGrey);
-
-  //static const back_light =
-  //  Image(image: AssetImage('lib/ui/res/icons/ARROW.png'));
-
-  //static const list_sights =
-  //  Image(image: AssetImage('lib/ui/res/icons/list.png'));
-
-  //static const map_icon = Image(image: AssetImage('lib/ui/res/icons/map.png'));
-
-  // static const heart_full =
-  //    Image(image: AssetImage('lib/ui/res/icons/heart_full'));
-
-  //static const way_light = Image(image: AssetImage('lib/ui/res/icons/way.png'));
 }
