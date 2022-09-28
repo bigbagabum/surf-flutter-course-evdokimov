@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
 
         //   home: VisitingScreen());
         //home: const SightListScreen());
-        //home: SightDetails(sight: mocks[0]));
-        home: const HomePage());
+        home: SightDetails(sight: mocks[0]));
+    //home: const HomePage());
   }
 }
 
