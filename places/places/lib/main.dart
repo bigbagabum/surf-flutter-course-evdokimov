@@ -26,11 +26,11 @@ class MyApp extends StatelessWidget {
         theme: darkTheme,
         //theme: lightTheme,
 
-        home: VisitingScreen());
-    //home: const SightListScreen());
-    //home: SightCard(sight: mocks[1], listIndex: 0, status: 1));
-    //home: SightDetails(sight: mocks[0]));
-    //home: const HomePage());
+        //    home: VisitingScreen());
+        //home: const SightListScreen());
+        //home: SightCard(sight: mocks[1], listIndex: 0, status: 1));
+        //home: SightDetails(sight: mocks[0]));
+        home: const HomePage());
   }
 }
 
