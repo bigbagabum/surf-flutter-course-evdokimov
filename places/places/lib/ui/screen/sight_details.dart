@@ -5,6 +5,25 @@ import 'package:places/ui/res/app_theme.dart';
 class SightDetails extends StatelessWidget {
   final Sight? sight;
   const SightDetails({Key? key, this.sight}) : super(key: key);
+  String _clickBack() {
+    print('Back button clicked');
+    return '';
+  }
+
+  String _buildRouteClick() {
+    print('Build a route button click');
+    return '';
+  }
+
+  String _favoriteButtonClick() {
+    print('favorite button click');
+    return '';
+  }
+
+  String _calendarButtonClick() {
+    print('Calendar Burron Clicked');
+    return '';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,17 +56,20 @@ class SightDetails extends StatelessWidget {
                                 //child
                               );
                             })),
-                    Container(
-                        height: 32,
-                        width: 32,
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        margin: const EdgeInsets.only(left: 16, top: 36),
-                        child: Image(
-                            color: Theme.of(context).primaryColorLight,
-                            image: AssetImage('lib/ui/res/icons/back.png'))),
+                    GestureDetector(
+                      onTap: _clickBack,
+                      child: Container(
+                          height: 32,
+                          width: 32,
+                          decoration: BoxDecoration(
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          margin: const EdgeInsets.only(left: 16, top: 36),
+                          child: Image(
+                              color: Theme.of(context).primaryColorLight,
+                              image: AssetImage('lib/ui/res/icons/back.png'))),
+                    ),
                   ])),
               // const SizedBox(
               //   height: 0,
@@ -113,23 +135,24 @@ class SightDetails extends StatelessWidget {
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(12)),
                                       color: Colors.green),
-                                  child: Center(
+                                  child: ElevatedButton(
+                                      onPressed: _buildRouteClick,
                                       child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                        Container(
-                                            margin: const EdgeInsets.only(
-                                                right: 10),
-                                            child: const Image(
-                                                image: AssetImage(
-                                                    'lib/ui/res/icons/way.png'))),
-                                        const Text('ПОСТРОИТЬ МАРШРУТ',
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                fontFamily: 'Roboto',
-                                                color: Colors.white))
-                                      ])))),
+                                            Container(
+                                                margin: const EdgeInsets.only(
+                                                    right: 10),
+                                                child: const Image(
+                                                    image: AssetImage(
+                                                        'lib/ui/res/icons/way.png'))),
+                                            const Text('ПОСТРОИТЬ МАРШРУТ',
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    fontFamily: 'Roboto',
+                                                    color: Colors.white))
+                                          ])))),
                           Container(
                               alignment: Alignment.center,
                               child: Container(
@@ -140,47 +163,53 @@ class SightDetails extends StatelessWidget {
                           Row(
                             children: [
                               Flexible(
-                                  child: Container(
-                                      //width: 164,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: const [
-                                            Image(
-                                                image: AssetImage(
-                                                    'lib/ui/res/icons/calendar.png'),
-                                                color: AppColors.darkIcon),
-                                            Text(
-                                              'Запланировать',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  color: Color.fromARGB(
-                                                      255, 58, 63, 91)),
-                                            )
-                                          ]))),
+                                  child: GestureDetector(
+                                onTap: _calendarButtonClick,
+                                child: Container(
+                                    //width: 164,
+                                    height: 40,
+                                    alignment: Alignment.center,
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Image(
+                                              image: AssetImage(
+                                                  'lib/ui/res/icons/calendar.png'),
+                                              color: AppColors.darkIcon),
+                                          Text(
+                                            'Запланировать',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Color.fromARGB(
+                                                    255, 58, 63, 91)),
+                                          )
+                                        ])),
+                              )),
                               Flexible(
                                   flex: 1,
-                                  child: Container(
-                                      //width: 164,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: const [
-                                            Image(
-                                                image: AssetImage(
-                                                    'lib/ui/res/icons/heart_icon.png'),
-                                                color: AppColors.darkIcon),
-                                            Text('В избранное',
-                                                style: TextStyle(
-                                                    //fontFamily: 'Roboto',
-                                                    fontSize: 14,
-                                                    color: Color.fromARGB(
-                                                        255, 58, 63, 91)))
-                                          ])))
+                                  child: GestureDetector(
+                                    onTap: _favoriteButtonClick,
+                                    child: Container(
+                                        //width: 164,
+                                        height: 40,
+                                        alignment: Alignment.center,
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: const [
+                                              Image(
+                                                  image: AssetImage(
+                                                      'lib/ui/res/icons/heart_icon.png'),
+                                                  color: AppColors.darkIcon),
+                                              Text('В избранное',
+                                                  style: TextStyle(
+                                                      //fontFamily: 'Roboto',
+                                                      fontSize: 14,
+                                                      color: Color.fromARGB(
+                                                          255, 58, 63, 91)))
+                                            ])),
+                                  ))
                             ],
                           ),
                         ])),
