@@ -5,15 +5,33 @@ import 'package:places/ui/res/app_theme.dart';
 class TopIconWidget extends StatelessWidget {
   final dynamic status, listIndex;
 
+  String _heartIconClick() {
+    print('Heart icon Clicked');
+    return '';
+  }
+
+  String _calendarIconClick() {
+    print('Calendar Icon Click');
+    return '';
+  }
+
+  String _cancelIconClick() {
+    print('Cancel Buttun Clicked');
+    return '';
+  }
+
   const TopIconWidget({Key? key, required this.status, required this.listIndex})
       : super(key: key);
 
   Widget _topIconRow() {
     switch (listIndex) {
       case SightListIndex.mainList:
-        return const Image(
-            image: AssetImage('lib/ui/res/icons/heart_icon.png'),
-            color: AppColors.lightGrey);
+        return GestureDetector(
+          onTap: _heartIconClick,
+          child: Image(
+              image: AssetImage('lib/ui/res/icons/heart_icon.png'),
+              color: AppColors.lightGrey),
+        );
       case SightListIndex.planList:
         switch (status) {
           case SightStatus.sightNoPlans:
@@ -21,13 +39,19 @@ class TopIconWidget extends StatelessWidget {
 
           case SightStatus
               .sightToVisit: // вид карточки в списке "Хочу посетить"
-            return Row(children: const [
-              Image(
-                  image: AssetImage('lib/ui/res/icons/calendar.png'),
-                  color: AppColors.lightGrey),
-              Image(
-                  image: AssetImage('lib/ui/res/icons/cancel.png'),
-                  color: AppColors.lightGrey)
+            return Row(children: [
+              GestureDetector(
+                onTap: _calendarIconClick,
+                child: Image(
+                    image: AssetImage('lib/ui/res/icons/calendar.png'),
+                    color: AppColors.lightGrey),
+              ),
+              GestureDetector(
+                onTap: _cancelIconClick,
+                child: Image(
+                    image: AssetImage('lib/ui/res/icons/cancel.png'),
+                    color: AppColors.lightGrey),
+              )
             ]);
 
           case SightStatus.sightVisited: // вид карточк в списке "посетил"
