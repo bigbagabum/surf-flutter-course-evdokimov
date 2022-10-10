@@ -77,8 +77,13 @@ class _settingsScreenState extends State<settingsScreen> {
                     ),
                   ),
                   const Spacer(),
-                  const Image(
-                      image: AssetImage('lib/ui/res/icons/information.png')),
+                  GestureDetector(
+                    onTap: () {
+                      print('Open tutorial icon clicked');
+                    },
+                    child: const Image(
+                        image: AssetImage('lib/ui/res/icons/information.png')),
+                  ),
                 ],
               )),
           Container(
