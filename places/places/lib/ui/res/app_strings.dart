@@ -6,4 +6,6 @@ class AppStrings {
   static const tabVisited = 'Посетил';
   static const titleScreenFavorite = 'Избранное';
   static const appTitleSettings = 'Настройки';
+  static const darkTheme = 'Темная тема';
+  static const openTutorial = 'Смотреть туториал';
 }

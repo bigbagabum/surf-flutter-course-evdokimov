@@ -11,6 +11,8 @@ class settingsScreen extends StatefulWidget {
 }
 
 class _settingsScreenState extends State<settingsScreen> {
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +28,66 @@ class _settingsScreenState extends State<settingsScreen> {
                     fontWeight: FontWeight.bold,
                     height: 1)),
           )),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+            height: 50,
+            width: double.infinity,
+            //color: Colors.amber,
+            child: Row(
+              children: [
+                Text(
+                  AppStrings.darkTheme,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Theme.of(context).primaryColorLight,
+                    fontFamily: "Roboto",
+                  ),
+                ),
+                const Spacer(),
+                Switch(
+                    value: isChecked,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        isChecked = value!;
+                      });
+                    })
+              ],
+            ),
+          ),
+          Container(
+              height: 1,
+              width: double.infinity,
+              color: Color.fromRGBO(124, 126, 146, 0.3),
+              margin: const EdgeInsets.only(left: 16, right: 16)),
+          Container(
+              padding: const EdgeInsets.only(left: 5.0, right: 30.0),
+              height: 50,
+              width: double.infinity,
+              //color: Colors.amber,
+              child: Row(
+                children: [
+                  Text(
+                    AppStrings.openTutorial,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Theme.of(context).primaryColorLight,
+                      fontFamily: "Roboto",
+                    ),
+                  ),
+                  const Spacer(),
+                  const Image(
+                      image: AssetImage('lib/ui/res/icons/information.png')),
+                ],
+              )),
+          Container(
+              height: 1,
+              width: double.infinity,
+              color: Color.fromRGBO(124, 126, 146, 0.3),
+              margin: const EdgeInsets.only(left: 16, right: 16)),
+        ],
+      ),
     );
   }
 }
