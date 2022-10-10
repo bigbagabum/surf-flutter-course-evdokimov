@@ -5,4 +5,5 @@ class AppStrings {
   static const tabPlanned = "Хочу посетить";
   static const tabVisited = 'Посетил';
   static const titleScreenFavorite = 'Избранное';
+  static const appTitleSettings = 'Настройки';
 }

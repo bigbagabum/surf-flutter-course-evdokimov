@@ -20,6 +20,11 @@ class TopIconWidget extends StatelessWidget {
     return '';
   }
 
+  String _routeIconClick() {
+    print('Route Button Clicked');
+    return '';
+  }
+
   const TopIconWidget({Key? key, required this.status, required this.listIndex})
       : super(key: key);
 
@@ -42,24 +47,30 @@ class TopIconWidget extends StatelessWidget {
             return Row(children: [
               GestureDetector(
                 onTap: _calendarIconClick,
-                child: Image(
+                child: const Image(
                     image: AssetImage('lib/ui/res/icons/calendar.png'),
                     color: AppColors.lightGrey),
               ),
               GestureDetector(
                 onTap: _cancelIconClick,
-                child: Image(
+                child: const Image(
                     image: AssetImage('lib/ui/res/icons/cancel.png'),
                     color: AppColors.lightGrey),
               )
             ]);
 
           case SightStatus.sightVisited: // вид карточк в списке "посетил"
-            return Row(children: const [
-              Image(image: AssetImage('lib/ui/res/icons/way.png')),
-              Image(
-                  image: AssetImage('lib/ui/res/icons/cancel.png'),
-                  color: AppColors.lightGrey)
+            return Row(children: [
+              GestureDetector(
+                  onTap: _routeIconClick,
+                  child: const Image(
+                      image: AssetImage('lib/ui/res/icons/way.png'))),
+              GestureDetector(
+                onTap: _cancelIconClick,
+                child: const Image(
+                    image: AssetImage('lib/ui/res/icons/cancel.png'),
+                    color: AppColors.lightGrey),
+              )
             ]);
         }
     }
