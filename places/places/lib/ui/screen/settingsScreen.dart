@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -31,7 +32,7 @@ class _settingsScreenState extends State<settingsScreen> {
       body: Column(
         children: [
           Container(
-            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+            padding: const EdgeInsets.only(left: 5.0, right: 10.0),
             height: 50,
             width: double.infinity,
             //color: Colors.amber,
@@ -46,7 +47,7 @@ class _settingsScreenState extends State<settingsScreen> {
                   ),
                 ),
                 const Spacer(),
-                Switch(
+                CupertinoSwitch(
                     value: isChecked,
                     onChanged: (bool? value) {
                       setState(() {
