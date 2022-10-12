@@ -4,6 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:places/ui/res/app_strings.dart';
 
+import '../../main.dart';
+
 class settingsScreen extends StatefulWidget {
   const settingsScreen({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class settingsScreen extends StatefulWidget {
 }
 
 class _settingsScreenState extends State<settingsScreen> {
-  bool isChecked = false;
+  bool isBlack = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +50,11 @@ class _settingsScreenState extends State<settingsScreen> {
                 ),
                 const Spacer(),
                 CupertinoSwitch(
-                    value: isChecked,
+                    value: isBlack,
                     onChanged: (bool? value) {
                       setState(() {
-                        isChecked = value!;
+                        //isChecked = value!;
+                        isBlack = value!;
                       });
                     })
               ],
