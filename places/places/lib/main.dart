@@ -12,11 +12,18 @@ import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  //bool isBlack = false;
 
   // This widget is the root of your application.
   @override
@@ -28,7 +35,7 @@ class MyApp extends StatelessWidget {
         // ),
         //theme: darkTheme,
         theme: lightTheme,
-
+        //theme: settingsScreen.isBlack ? darkTheme : lightTheme,
         //    home: VisitingScreen());
         //home: const SightListScreen());
         //home: SightCard(sight: mocks[1], listIndex: 0, status: 1));
