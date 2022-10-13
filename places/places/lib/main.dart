@@ -3,7 +3,7 @@ import 'package:places/mocks.dart';
 import 'package:places/ui/res/app_assets.dart';
 import 'package:places/ui/screen/FiltersScreen.dart';
 import 'package:places/ui/screen/map_screen.dart';
-
+import 'package:provider/provider.dart';
 import 'package:places/ui/screen/res/themes.dart';
 import 'package:places/ui/screen/settingsScreen.dart';
 import 'package:places/ui/screen/sight_card.dart';
@@ -12,7 +12,20 @@ import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider<myTheme>(
+      create: (context) => myTheme(), child: MyApp()));
+}
+
+class myTheme extends ChangeNotifier {
+  ThemeData _data = lightTheme;
+  static bool isBlack = false;
+
+  ThemeData get currentTheme => _data;
+
+  void changeTheme(bool newTheme) {
+    _data = newTheme ? darkTheme : lightTheme;
+    notifyListeners();
+  }
 }
 
 class MyApp extends StatefulWidget {
@@ -23,19 +36,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  //bool isBlack = false;
+  //static bool isBlack = false;
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        //title: 'Flutter Demo',
-        //theme: ThemeData.dark(),
-        //    primarySwatch: Colors.blue,
-        // ),
+
         //theme: darkTheme,
-        theme: lightTheme,
-        //theme: settingsScreen.isBlack ? darkTheme : lightTheme,
+        //theme: lightTheme,
+        theme: context.watch<myTheme>().currentTheme,
+
         //    home: VisitingScreen());
         //home: const SightListScreen());
         //home: SightCard(sight: mocks[1], listIndex: 0, status: 1));
