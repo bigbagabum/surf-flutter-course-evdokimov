@@ -8,4 +8,6 @@ class AppStrings {
   static const appTitleSettings = 'Настройки';
   static const darkTheme = 'Темная тема';
   static const openTutorial = 'Смотреть туториал';
+  static const clearFilter = 'Очистить';
+  static const categoties = 'КАТЕГОРИИ';
 }

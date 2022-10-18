@@ -6,10 +6,6 @@ import 'package:places/ui/res/app_strings.dart';
 import 'package:provider/provider.dart';
 import '../../main.dart';
 
-class setThema extends ChangeNotifier {
-  notifyListeners();
-}
-
 class settingsScreen extends StatefulWidget {
   const settingsScreen({Key? key}) : super(key: key);
 
@@ -18,8 +14,6 @@ class settingsScreen extends StatefulWidget {
 }
 
 class _settingsScreenState extends State<settingsScreen> {
-  bool isBlack = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

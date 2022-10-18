@@ -7,6 +7,10 @@
     <list default="true" id="abac8a25-57ee-421f-b3ea-f2208c869153" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/places/places/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/places/places/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places/places/lib/ui/res/app_strings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/places/places/lib/ui/res/app_strings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places/places/lib/ui/res/app_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/places/places/lib/ui/res/app_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places/places/lib/ui/screen/FiltersScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/places/places/lib/ui/screen/FiltersScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/places/places/lib/ui/screen/settingsScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/places/places/lib/ui/screen/settingsScreen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
