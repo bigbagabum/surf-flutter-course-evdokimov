@@ -166,7 +166,19 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 });
               }),
           Spacer(),
-          //ElevatedButton(onPressed: setState(() {}), child: Text('Показать'))
+          SizedBox(
+            height: 48,
+            width: 328,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green)),
+                onPressed: () {},
+                child: Text(
+                  'Показать 100500 штук',
+                  style: AppTypography.textText14bold,
+                )),
+          )
         ],
       ),
     );

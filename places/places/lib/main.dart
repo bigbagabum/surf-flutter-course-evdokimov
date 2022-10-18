@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
         //    home: VisitingScreen());
         //home: const SightListScreen());
         //home: SightCard(sight: mocks[1], listIndex: 0, status: 1));
-        //home: SightDetails(sight: mocks[0]));
+        // home: SightDetails(sight: mocks[0]));
         //home: const HomePage());
         home: const FiltersScreen());
   }

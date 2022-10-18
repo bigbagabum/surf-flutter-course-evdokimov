@@ -136,6 +136,10 @@ class SightDetails extends StatelessWidget {
                                           BorderRadius.all(Radius.circular(12)),
                                       color: Colors.green),
                                   child: ElevatedButton(
+                                      style: ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Colors.green)),
                                       onPressed: _buildRouteClick,
                                       child: Row(
                                           mainAxisAlignment:
