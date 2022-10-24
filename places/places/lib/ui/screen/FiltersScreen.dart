@@ -1,4 +1,5 @@
 // ignore: file_names
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 import 'package:places/ui/res/app_strings.dart';
@@ -11,6 +12,18 @@ class FiltersScreen extends StatefulWidget {
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
 
+Widget isCheckedFilterItem(bool value) {
+  return value
+      ? Image(image: AssetImage('lib/ui/res/icons/tick_choice.png'))
+      : Container();
+}
+
+bool isHotel = true,
+    isRestourant = true,
+    isParticularPlace = true,
+    isPark = true,
+    isMuseum = true,
+    isCafe = true;
 int _distanceMin = 100;
 int _distanceMax = 10000;
 
@@ -42,8 +55,21 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         image: AssetImage('lib/ui/res/icons/back.png'))),
               ),
               const Spacer(),
-              const Text(AppStrings.clearFilter,
-                  style: AppTypography.textGreen16),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    isHotel = true;
+                    isPark = true;
+                    isRestourant = true;
+                    isMuseum = true;
+                    isParticularPlace = true;
+                    isCafe = true;
+                    _currentRangeValues = const RangeValues(100, 10000);
+                  });
+                },
+                child: const Text(AppStrings.clearFilter,
+                    style: AppTypography.textGreen16),
+              ),
             ],
           )),
       body: Column(
@@ -68,9 +94,27 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         margin: EdgeInsets.only(left: 25, right: 24),
                         child: Column(
                           children: [
-                            Image(
-                                image:
-                                    AssetImage('lib/ui/res/icons/Hotel.png')),
+                            Container(
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isHotel = !isHotel;
+                                  });
+                                },
+                                //isHotel = !isHotel;
+
+                                child: Stack(
+                                  //фильтр Отелей
+                                  alignment: AlignmentDirectional.bottomEnd,
+                                  children: [
+                                    Image(
+                                        image: AssetImage(
+                                            'lib/ui/res/icons/Hotel.png')),
+                                    isCheckedFilterItem(isHotel),
+                                  ],
+                                ),
+                              ),
+                            ),
                             Text(
                               'Отель',
                               style: AppTypography.textText12regular,
@@ -78,8 +122,23 @@ class _FiltersScreenState extends State<FiltersScreen> {
                             SizedBox(
                                 height:
                                     40), //добавляем разделитель между строками
-                            Image(
-                                image: AssetImage('lib/ui/res/icons/Park.png')),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isPark = !isPark;
+                                });
+                              },
+                              child: Stack(
+                                // фильтр парков
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Park.png')),
+                                  isCheckedFilterItem(isPark),
+                                ],
+                              ),
+                            ),
                             Text(
                               'Парк',
                               style: AppTypography.textText12regular,
@@ -91,9 +150,22 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         margin: EdgeInsets.only(left: 22, right: 22),
                         child: Column(
                           children: [
-                            Image(
-                                image: AssetImage(
-                                    'lib/ui/res/icons/Restourant.png')),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isRestourant = !isRestourant;
+                                });
+                              },
+                              child: Stack(
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Restourant.png')),
+                                  isCheckedFilterItem(isRestourant)
+                                ],
+                              ),
+                            ),
                             Text(
                               'Ресторан',
                               style: AppTypography.textText12regular,
@@ -101,9 +173,23 @@ class _FiltersScreenState extends State<FiltersScreen> {
                             SizedBox(
                                 height:
                                     40), //добавляем разделитель между строками
-                            Image(
-                                image:
-                                    AssetImage('lib/ui/res/icons/Museum.png')),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isMuseum = !isMuseum;
+                                });
+                              },
+                              child: Stack(
+                                // фильтр музея
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Museum.png')),
+                                  isCheckedFilterItem(isMuseum)
+                                ],
+                              ),
+                            ),
                             Text(
                               'Музей',
                               style: AppTypography.textText12regular,
@@ -115,9 +201,22 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         padding: const EdgeInsets.only(left: 18, right: 25),
                         child: Column(
                           children: [
-                            Image(
-                                image: AssetImage(
-                                    'lib/ui/res/icons/Particular_place.png')),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isParticularPlace = !isParticularPlace;
+                                });
+                              },
+                              child: Stack(
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Particular_place.png')),
+                                  isCheckedFilterItem(isParticularPlace)
+                                ],
+                              ),
+                            ),
                             Text(
                               'Особое место',
                               style: AppTypography.textText12regular,
@@ -125,8 +224,22 @@ class _FiltersScreenState extends State<FiltersScreen> {
                             SizedBox(
                                 height:
                                     40), //добавляем разделитель между строками
-                            Image(
-                                image: AssetImage('lib/ui/res/icons/Cafe.png')),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isCafe = !isCafe;
+                                });
+                              },
+                              child: Stack(
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Cafe.png')),
+                                  isCheckedFilterItem(isCafe)
+                                ],
+                              ),
+                            ),
                             Text(
                               'Кафе',
                               style: AppTypography.textText12regular,
