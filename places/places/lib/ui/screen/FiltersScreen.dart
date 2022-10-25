@@ -1,6 +1,8 @@
 // ignore: file_names
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
+import 'package:places/mocks.dart';
 
 import 'package:places/ui/res/app_strings.dart';
 import 'package:places/ui/res/app_theme.dart';
@@ -10,6 +12,34 @@ class FiltersScreen extends StatefulWidget {
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
+}
+
+int filteredListLength = mocks.length;
+
+List<String> fillListItems(List<Sight> value) {
+  List<String> filledList = [];
+  for (var n in value) {
+    filledList.add(n.name);
+  }
+  return filledList;
+}
+
+List<String> filteredMockList = fillListItems(mocks);
+
+filterOfItems() {
+  List<String> filteredPlaces = [];
+  for (int e = 0; e < mocks.length; e++) {
+    if ((mocks[e].type == 'отель' && isHotel) ||
+        (mocks[e].type == 'парк' && isPark) ||
+        (mocks[e].type == 'ресторан' && isRestourant) ||
+        (mocks[e].type == 'особое место' && isParticularPlace) ||
+        (mocks[e].type == 'музей' && isMuseum) ||
+        (mocks[e].type == 'кафе' && isCafe)) {
+      filteredPlaces.add(mocks[e].name);
+    }
+  }
+  filteredMockList = filteredPlaces;
+  filteredListLength = filteredMockList.length;
 }
 
 Widget isCheckedFilterItem(bool value) {
@@ -65,6 +95,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     isParticularPlace = true;
                     isCafe = true;
                     _currentRangeValues = const RangeValues(100, 10000);
+                    filterOfItems();
                   });
                 },
                 child: const Text(AppStrings.clearFilter,
@@ -99,6 +130,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                                 onTap: () {
                                   setState(() {
                                     isHotel = !isHotel;
+                                    filterOfItems();
                                   });
                                 },
                                 //isHotel = !isHotel;
@@ -126,6 +158,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               onTap: () {
                                 setState(() {
                                   isPark = !isPark;
+                                  filterOfItems();
                                 });
                               },
                               child: Stack(
@@ -154,6 +187,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               onTap: () {
                                 setState(() {
                                   isRestourant = !isRestourant;
+                                  filterOfItems();
                                 });
                               },
                               child: Stack(
@@ -177,6 +211,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               onTap: () {
                                 setState(() {
                                   isMuseum = !isMuseum;
+                                  filterOfItems();
                                 });
                               },
                               child: Stack(
@@ -205,6 +240,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               onTap: () {
                                 setState(() {
                                   isParticularPlace = !isParticularPlace;
+                                  filterOfItems();
                                 });
                               },
                               child: Stack(
@@ -228,6 +264,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               onTap: () {
                                 setState(() {
                                   isCafe = !isCafe;
+                                  filterOfItems();
                                 });
                               },
                               child: Stack(
@@ -286,9 +323,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.green)),
-                onPressed: () {},
+                onPressed: () {
+                  print(filteredMockList);
+                },
                 child: Text(
-                  'Показать 100500 штук',
+                  'Показать ($filteredListLength)',
                   style: AppTypography.textText14bold,
                 )),
           )
