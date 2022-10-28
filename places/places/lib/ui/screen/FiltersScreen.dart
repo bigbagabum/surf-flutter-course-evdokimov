@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
+import 'dart:math';
+import 'package:haversine_distance/haversine_distance.dart';
 
 import 'package:places/ui/res/app_strings.dart';
 import 'package:places/ui/res/app_theme.dart';
@@ -14,29 +16,58 @@ class FiltersScreen extends StatefulWidget {
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
 
-int filteredListLength = mocks.length;
+int filteredListLength = fillListItems(mocks).length;
 
 List<String> fillListItems(List<Sight> value) {
+  //Наполняем изначальными данными список мест
   List<String> filledList = [];
   for (var n in value) {
-    filledList.add(n.name);
+    if (isPlaceNear(
+        RedSquare,
+        Location(n.lat, n.lan),
+        _FiltersScreenState.currentRangeValues.start,
+        _FiltersScreenState.currentRangeValues.end)) {
+      filledList.add(n.name);
+    }
   }
   return filledList;
 }
 
-List<String> filteredMockList = fillListItems(mocks);
+var Podolsk = Location(55.431134, 37.544992);
+var RedSquare = Location(55.754840, 37.620881);
+var SanktPetersburg = Location(59.929661, 30.345274);
+
+final haversineDistance = HaversineDistance();
+
+bool isPlaceNear(Location CheckPlace, Location CenterPlace, kmMin, kmMax) {
+  final distanceInMeter =
+      haversineDistance.haversine(CheckPlace, CenterPlace, Unit.METER);
+  return (_FiltersScreenState.currentRangeValues.start <= distanceInMeter) &&
+      (distanceInMeter <= _FiltersScreenState.currentRangeValues.end);
+}
+
+List<String> filteredMockList =
+    fillListItems(mocks); //наполняем первично лист с учетом удаленности
 
 filterOfItems() {
   List<String> filteredPlaces = [];
+
   for (int e = 0; e < mocks.length; e++) {
-    if ((mocks[e].type == 'отель' && isHotel) ||
-        (mocks[e].type == 'парк' && isPark) ||
-        (mocks[e].type == 'ресторан' && isRestourant) ||
-        (mocks[e].type == 'особое место' && isParticularPlace) ||
-        (mocks[e].type == 'музей' && isMuseum) ||
-        (mocks[e].type == 'кафе' && isCafe)) {
+    if (((mocks[e].type == 'отель' && isHotel) ||
+            (mocks[e].type == 'парк' && isPark) ||
+            (mocks[e].type == 'ресторан' && isRestourant) ||
+            (mocks[e].type == 'особое место' && isParticularPlace) ||
+            (mocks[e].type == 'музей' && isMuseum) ||
+            (mocks[e].type == 'кафе' && isCafe)) &&
+        isPlaceNear(
+            RedSquare,
+            Location(mocks[e].lat, mocks[e].lan),
+            _FiltersScreenState.currentRangeValues.start,
+            _FiltersScreenState.currentRangeValues.end)) {
       filteredPlaces.add(mocks[e].name);
     }
+    print(
+        '${mocks[e].name}  расстояние до Красной площади =  ${haversineDistance.haversine(RedSquare, Location(mocks[e].lat, mocks[e].lan), Unit.METER).round()} м');
   }
   filteredMockList = filteredPlaces;
   filteredListLength = filteredMockList.length;
@@ -63,7 +94,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return '';
   }
 
-  RangeValues _currentRangeValues = const RangeValues(500, 8000);
+  static RangeValues currentRangeValues = const RangeValues(500, 8000);
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +125,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     isMuseum = true;
                     isParticularPlace = true;
                     isCafe = true;
-                    _currentRangeValues = const RangeValues(100, 10000);
+                    currentRangeValues = const RangeValues(100, 10000);
                     filterOfItems();
                   });
                 },
@@ -293,27 +324,24 @@ class _FiltersScreenState extends State<FiltersScreen> {
                           style: AppTypography.textText16Regular),
                       Spacer(),
                       Text(
-                          'от ${_currentRangeValues.start.round().toString()} до ${_currentRangeValues.end.round().toString()} м.',
+                          'от ${currentRangeValues.start.round()} до ${currentRangeValues.end.round()} м.',
                           style: AppTypography.textText16Regular)
                     ],
                   ),
                 ],
               )),
           RangeSlider(
-              values: _currentRangeValues,
+              values: currentRangeValues,
               activeColor: Colors.green,
               inactiveColor: Colors.grey,
               max: 10000,
               min: 100,
-              divisions: 10,
-              // labels: RangeLabels(
-              //   _currentRangeValues.start.round().toString(),
-              //   _currentRangeValues.end.round().toString(),
-              // ),
+              divisions: 100,
               onChanged: (RangeValues values) {
                 setState(() {
-                  _currentRangeValues = values;
+                  currentRangeValues = values;
                 });
+                filterOfItems();
               }),
           Spacer(),
           SizedBox(
