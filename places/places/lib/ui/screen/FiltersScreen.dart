@@ -263,7 +263,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                           ],
                         ),
                       ),
-                      Container(
+                      Padding(
                         padding: const EdgeInsets.only(left: 18, right: 25),
                         child: Column(
                           children: [
