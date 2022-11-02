@@ -158,26 +158,23 @@ class _FiltersScreenState extends State<FiltersScreen> {
                           children: [
                             Container(
                               child: InkWell(
-                                onTap: () {},
-                                child: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      isHotel = !isHotel;
-                                      filterOfItems();
-                                    });
-                                  },
-                                  //isHotel = !isHotel;
+                                onTap: () {
+                                  setState(() {
+                                    isHotel = !isHotel;
+                                    filterOfItems();
+                                  });
+                                },
+                                //isHotel = !isHotel;
 
-                                  child: Stack(
-                                    //фильтр Отелей
-                                    alignment: AlignmentDirectional.bottomEnd,
-                                    children: [
-                                      Image(
-                                          image: AssetImage(
-                                              'lib/ui/res/icons/Hotel.png')),
-                                      isCheckedFilterItem(isHotel),
-                                    ],
-                                  ),
+                                child: Stack(
+                                  //фильтр Отелей
+                                  alignment: AlignmentDirectional.bottomEnd,
+                                  children: [
+                                    Image(
+                                        image: AssetImage(
+                                            'lib/ui/res/icons/Hotel.png')),
+                                    isCheckedFilterItem(isHotel),
+                                  ],
                                 ),
                               ),
                             ),
@@ -189,24 +186,21 @@ class _FiltersScreenState extends State<FiltersScreen> {
                                 height:
                                     40), //добавляем разделитель между строками
                             InkWell(
-                              onTap: () {},
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    isPark = !isPark;
-                                    filterOfItems();
-                                  });
-                                },
-                                child: Stack(
-                                  // фильтр парков
-                                  alignment: AlignmentDirectional.bottomEnd,
-                                  children: [
-                                    Image(
-                                        image: AssetImage(
-                                            'lib/ui/res/icons/Park.png')),
-                                    isCheckedFilterItem(isPark),
-                                  ],
-                                ),
+                              onTap: () {
+                                setState(() {
+                                  isPark = !isPark;
+                                  filterOfItems();
+                                });
+                              },
+                              child: Stack(
+                                // фильтр парков
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Park.png')),
+                                  isCheckedFilterItem(isPark),
+                                ],
                               ),
                             ),
                             Text(
@@ -221,23 +215,20 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         child: Column(
                           children: [
                             InkWell(
-                              onTap: () {},
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    isRestourant = !isRestourant;
-                                    filterOfItems();
-                                  });
-                                },
-                                child: Stack(
-                                  alignment: AlignmentDirectional.bottomEnd,
-                                  children: [
-                                    Image(
-                                        image: AssetImage(
-                                            'lib/ui/res/icons/Restourant.png')),
-                                    isCheckedFilterItem(isRestourant)
-                                  ],
-                                ),
+                              onTap: () {
+                                setState(() {
+                                  isRestourant = !isRestourant;
+                                  filterOfItems();
+                                });
+                              },
+                              child: Stack(
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Restourant.png')),
+                                  isCheckedFilterItem(isRestourant)
+                                ],
                               ),
                             ),
                             Text(
@@ -248,24 +239,21 @@ class _FiltersScreenState extends State<FiltersScreen> {
                                 height:
                                     40), //добавляем разделитель между строками
                             InkWell(
-                              onTap: () {},
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    isMuseum = !isMuseum;
-                                    filterOfItems();
-                                  });
-                                },
-                                child: Stack(
-                                  // фильтр музея
-                                  alignment: AlignmentDirectional.bottomEnd,
-                                  children: [
-                                    Image(
-                                        image: AssetImage(
-                                            'lib/ui/res/icons/Museum.png')),
-                                    isCheckedFilterItem(isMuseum)
-                                  ],
-                                ),
+                              onTap: () {
+                                setState(() {
+                                  isMuseum = !isMuseum;
+                                  filterOfItems();
+                                });
+                              },
+                              child: Stack(
+                                // фильтр музея
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Museum.png')),
+                                  isCheckedFilterItem(isMuseum)
+                                ],
                               ),
                             ),
                             Text(
@@ -280,23 +268,20 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         child: Column(
                           children: [
                             InkWell(
-                              onTap: () {},
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    isParticularPlace = !isParticularPlace;
-                                    filterOfItems();
-                                  });
-                                },
-                                child: Stack(
-                                  alignment: AlignmentDirectional.bottomEnd,
-                                  children: [
-                                    Image(
-                                        image: AssetImage(
-                                            'lib/ui/res/icons/Particular_place.png')),
-                                    isCheckedFilterItem(isParticularPlace)
-                                  ],
-                                ),
+                              onTap: () {
+                                setState(() {
+                                  isParticularPlace = !isParticularPlace;
+                                  filterOfItems();
+                                });
+                              },
+                              child: Stack(
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Particular_place.png')),
+                                  isCheckedFilterItem(isParticularPlace)
+                                ],
                               ),
                             ),
                             Text(
@@ -307,23 +292,20 @@ class _FiltersScreenState extends State<FiltersScreen> {
                                 height:
                                     40), //добавляем разделитель между строками
                             InkWell(
-                              onTap: () {},
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    isCafe = !isCafe;
-                                    filterOfItems();
-                                  });
-                                },
-                                child: Stack(
-                                  alignment: AlignmentDirectional.bottomEnd,
-                                  children: [
-                                    Image(
-                                        image: AssetImage(
-                                            'lib/ui/res/icons/Cafe.png')),
-                                    isCheckedFilterItem(isCafe)
-                                  ],
-                                ),
+                              onTap: () {
+                                setState(() {
+                                  isCafe = !isCafe;
+                                  filterOfItems();
+                                });
+                              },
+                              child: Stack(
+                                alignment: AlignmentDirectional.bottomEnd,
+                                children: [
+                                  Image(
+                                      image: AssetImage(
+                                          'lib/ui/res/icons/Cafe.png')),
+                                  isCheckedFilterItem(isCafe)
+                                ],
                               ),
                             ),
                             Text(
