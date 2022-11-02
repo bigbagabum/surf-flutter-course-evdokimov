@@ -46,7 +46,8 @@ class _settingsScreenState extends State<settingsScreen> {
                     fontFamily: "Roboto",
                   ),
                 ),
-                const Spacer(),
+                const Divider(),
+                //const Spacer(),
                 CupertinoSwitch(
                     value: myTheme.isBlack,
                     //value: isBlack,

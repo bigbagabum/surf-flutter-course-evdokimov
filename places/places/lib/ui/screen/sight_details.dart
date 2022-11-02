@@ -5,24 +5,20 @@ import 'package:places/ui/res/app_theme.dart';
 class SightDetails extends StatelessWidget {
   final Sight? sight;
   const SightDetails({Key? key, this.sight}) : super(key: key);
-  String _clickBack() {
+  void _clickBack() {
     print('Back button clicked');
-    return '';
   }
 
-  String _buildRouteClick() {
+  void _buildRouteClick() {
     print('Build a route button click');
-    return '';
   }
 
-  String _favoriteButtonClick() {
+  _favoriteButtonClick() {
     print('favorite button click');
-    return '';
   }
 
-  String _calendarButtonClick() {
-    print('Calendar Burron Clicked');
-    return '';
+  _calendarButtonClick() {
+    print('Calendar Button Clicked');
   }
 
   @override
