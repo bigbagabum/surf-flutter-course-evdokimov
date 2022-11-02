@@ -182,7 +182,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               ),
                             ),
                             Text(
-                              'Отель',
+                              AppStrings.typeHotel,
                               style: AppTypography.textText12regular,
                             ),
                             SizedBox(
@@ -210,7 +210,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               ),
                             ),
                             Text(
-                              'Парк',
+                              AppStrings.typePark,
                               style: AppTypography.textText12regular,
                             ),
                           ],
@@ -241,7 +241,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               ),
                             ),
                             Text(
-                              'Ресторан',
+                              AppStrings.typeRestourant,
                               style: AppTypography.textText12regular,
                             ),
                             SizedBox(
@@ -269,7 +269,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               ),
                             ),
                             Text(
-                              'Музей',
+                              AppStrings.typeMuseum,
                               style: AppTypography.textText12regular,
                             ),
                           ],
@@ -300,7 +300,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               ),
                             ),
                             Text(
-                              'Особое место',
+                              AppStrings.typePartikularPlace,
                               style: AppTypography.textText12regular,
                             ),
                             SizedBox(
@@ -327,7 +327,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                               ),
                             ),
                             Text(
-                              'Кафе',
+                              AppStrings.typeCafe,
                               style: AppTypography.textText12regular,
                             ),
                           ],
@@ -338,7 +338,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   SizedBox(height: 56),
                   Row(
                     children: [
-                      Text('Расстояние',
+                      Text(AppStrings.distance,
                           style: AppTypography.textText16Regular),
                       Spacer(),
                       Text(
