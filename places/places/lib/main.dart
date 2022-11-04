@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
     const SightListScreen(),
     const MapScreen(),
     const VisitingScreen(),
-    const settingsScreen(),
+    const SettingsScreen(),
   ];
 
   void _onItemTapped(int index) {

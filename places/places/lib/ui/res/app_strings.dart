@@ -1,8 +1,8 @@
 //строковые константы
 
 class AppStrings {
-  static const appTitle = "Список\nинтересных мест";
-  static const tabPlanned = "Хочу посетить";
+  static const appTitle = 'Список\nинтересных мест';
+  static const tabPlanned = 'Хочу посетить';
   static const tabVisited = 'Посетил';
   static const titleScreenFavorite = 'Избранное';
   static const appTitleSettings = 'Настройки';
@@ -17,4 +17,5 @@ class AppStrings {
   static const typeMuseum = 'Музей';
   static const typePartikularPlace = 'Особое место';
   static const typeCafe = 'Кафе';
+  static const builtRoute = 'ПОСТРОИТЬ МАРШРУТ';
 }

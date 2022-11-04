@@ -6,14 +6,14 @@ import 'package:places/ui/res/app_strings.dart';
 import 'package:provider/provider.dart';
 import '../../main.dart';
 
-class settingsScreen extends StatefulWidget {
-  const settingsScreen({Key? key}) : super(key: key);
+class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({Key? key}) : super(key: key);
 
   @override
-  State<settingsScreen> createState() => _settingsScreenState();
+  State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _settingsScreenState extends State<settingsScreen> {
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
