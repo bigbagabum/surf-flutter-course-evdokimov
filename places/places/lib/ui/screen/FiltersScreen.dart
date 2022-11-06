@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
-import 'dart:math';
 import 'package:haversine_distance/haversine_distance.dart';
 import 'package:places/ui/res/app_assets.dart';
 
