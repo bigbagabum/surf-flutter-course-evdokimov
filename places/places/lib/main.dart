@@ -12,11 +12,11 @@ import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider<myTheme>(
-      create: (context) => myTheme(), child: MyApp()));
+  runApp(ChangeNotifierProvider<MyTheme>(
+      create: (context) => MyTheme(), child: MyApp()));
 }
 
-class myTheme extends ChangeNotifier {
+class MyTheme extends ChangeNotifier {
   ThemeData _data = lightTheme;
   static bool isBlack = false;
 
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
 
         //theme: darkTheme,
         //theme: lightTheme,
-        theme: context.watch<myTheme>().currentTheme,
+        theme: context.watch<MyTheme>().currentTheme,
 
         //    home: VisitingScreen());
         //home: const SightListScreen());
