@@ -49,14 +49,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 const Divider(),
                 //const Spacer(),
                 CupertinoSwitch(
-                    value: myTheme.isBlack,
+                    value: MyTheme.isBlack,
                     //value: isBlack,
                     onChanged: (bool? value) {
                       setState(() {
                         //isChecked = value!;
-                        myTheme.isBlack = value!;
+                        MyTheme.isBlack = value!;
                       });
-                      context.read<myTheme>().changeTheme(myTheme.isBlack);
+                      context.read<MyTheme>().changeTheme(MyTheme.isBlack);
                       //myTheme().changeTheme(isBlack);
                     })
               ],
