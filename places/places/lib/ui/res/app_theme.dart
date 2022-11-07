@@ -12,21 +12,12 @@ class AppTypography {
     //color: Theme.of(context).primaryColorLight,
   );
 
-  static const textGreen16 = TextStyle(
-      fontSize: 16.0,
-      fontFamily: 'Roboto',
-      color: Colors.green,
-      fontWeight: FontWeight.bold);
-
   static const textText32Bold = TextStyle(
       fontSize: 32.0,
       //color: Theme.of(context).primaryColorLight,
       fontFamily: "Roboto",
       fontWeight: FontWeight.bold,
       height: 1);
-
-  static const textText12regular =
-      TextStyle(fontSize: 12.0, fontFamily: 'Roboto');
 
   static const textText14bold = TextStyle(
       fontSize: 14.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold);
